@@ -1,18 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-            <style>.lw { font-size: 60px; }</style>
-        </head>
-        <body style="overflow: auto;">
-            
-
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Webloom - Sitios Web Que Convierten Visitantes en Clientes</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -252,45 +246,37 @@
         }
         
         .filter-btn {
-            padding: 0.75rem 1.5rem;
+            padding: 0.85rem 1.75rem;
             background: var(--color-white);
             border: 2px solid var(--color-border);
             border-radius: 50px;
             font-family: var(--font-display);
-            font-size: 0.95rem;
+            font-size: 1rem;
             font-weight: 600;
             color: var(--color-text);
             cursor: pointer;
             transition: all var(--transition-base);
-            position: relative;
-        }
-        
-        .filter-btn::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(135deg, var(--color-accent), var(--color-secondary));
-            border-radius: 50px;
-            opacity: 0;
-            transition: opacity var(--transition-base);
-            z-index: -1;
-        }
-        
-        .filter-btn.active::before {
-            opacity: 1;
+            min-width: 130px;
+            text-align: center;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
         }
         
         .filter-btn.active {
-            color: var(--color-white);
-            border-color: transparent;
+            background: linear-gradient(135deg, var(--color-accent), var(--color-secondary));
+            color: white;
+            border-color: var(--color-accent);
+            box-shadow: 0 4px 15px rgba(0, 217, 163, 0.3);
+            transform: translateY(-2px);
         }
         
-        .filter-btn:hover {
+        .filter-btn:hover:not(.active) {
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-color: var(--color-accent);
         }
         
         /* === GRID DE PROYECTOS === */
@@ -1199,13 +1185,15 @@
             .filter-tabs {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                gap: 0.5rem;
+                gap: 0.75rem;
                 padding: 0 1rem;
             }
             
             .filter-btn {
-                padding: 0.75rem 0.5rem;
-                font-size: 0.85rem;
+                padding: 0.85rem 1rem;
+                font-size: 0.9rem;
+                min-width: auto;
+                width: 100%;
             }
             
             /* Form */
@@ -1366,8 +1354,8 @@
             text-align: center;
         }
     </style>
-
-
+</head>
+<body>
 
     <!-- HERO SECTION -->
     <section class="hero" id="inicio">
@@ -1470,28 +1458,15 @@
             </div>
             
             <div class="filter-tabs">
-                <button class="filter-btn" data-filter="todos">Todos</button>
+                <button class="filter-btn active" data-filter="todos">Todos</button>
                 <button class="filter-btn" data-filter="basico">🌱 Básico</button>
-                <button class="filter-btn active" data-filter="profesional">🌿 Profesional</button>
+                <button class="filter-btn" data-filter="profesional">🌿 Profesional</button>
                 <button class="filter-btn" data-filter="premium">🌺 Premium</button>
             </div>
             
-            <div id="projectsGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2rem; max-width: 1400px; margin: 0 auto;"><div class="project-card" data-type="profesional">
-                    <div class="project-image" style="background-image: url('https://i.imgur.com/jAJS7s2.png');">
-                        <div class="project-badge profesional">
-                        🌿 Profesional
-                       </div>
-                        <div class="project-image-text">Hot Dog Express</div>
-                        <div class="project-image-subtitle">PROFESIONAL</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Hot Dog Express - Profesional</h3>
-                        <p class="project-description">Ejemplo de paquete Profesional - 5 secciones</p>
-                        <div class="project-impact">
-                            ⚡ Experiencia completa para atraer clientes
-                        </div>
-                    </div>
-                </div></div>
+            <div id="projectsGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2rem; max-width: 1400px; margin: 0 auto;">
+                <!-- Los proyectos demostrativos se cargarán aquí -->
+            </div>
         </div>
 
         <!-- DIVISOR VISUAL -->
@@ -1511,54 +1486,11 @@
                 <p style="color: var(--color-text-light); margin-top: 0.5rem;">Estas páginas ya están en Internet ayudando a negocios reales</p>
             </div>
             
-            <div id="realProjectsGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;"><div class="project-card" data-type="premium">
-                    <div class="project-image" style="background-image: url('https://i.imgur.com/Rt4LNWo.png');">
-                        <div class="project-badge premium" style="background: white; color: var(--color-primary); border: 2px solid var(--color-accent);">
-                        ✓ EN VIVO - 🌺 Premium
-                       </div>
-                        <div class="project-image-text">Fundación VIDARELAX</div>
-                        
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Fundación VIDARELAX</h3>
-                        <p class="project-description">Fundación para pacientes oncológicos en Bucaramanga</p>
-                        <div class="project-impact">
-                            🌐 Sitio web premium en producción
-                        </div>
-                    </div>
-                </div><div class="project-card" data-type="profesional">
-                    <div class="project-image" style="background-image: url('https://i.imgur.com/Z6rp2iZ.png');">
-                        <div class="project-badge profesional" style="background: white; color: var(--color-primary); border: 2px solid var(--color-accent);">
-                        ✓ EN VIVO - 🌿 Profesional
-                       </div>
-                        <div class="project-image-text">JuanDa Entrenador Personal</div>
-                        
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">JuanDa Entrenador Personal</h3>
-                        <p class="project-description">Sitio web para entrenador personal profesional</p>
-                        <div class="project-impact">
-                            🌐 Captación de clientes efectiva
-                        </div>
-                    </div>
-                </div><div class="project-card" data-type="basico">
-                    <div class="project-image" style="background-image: url('https://i.imgur.com/9KiHSYN.png');">
-                        <div class="project-badge basico" style="background: white; color: var(--color-primary); border: 2px solid var(--color-accent);">
-                        ✓ EN VIVO - 🌱 Básico
-                       </div>
-                        <div class="project-image-text">Granos Surcaribe</div>
-                        
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Granos Surcaribe</h3>
-                        <p class="project-description">Empresa comercializadora de granos y productos agrícolas</p>
-                        <div class="project-impact">
-                            🌐 Presencia digital establecida
-                        </div>
-                    </div>
-                </div></div>
+            <div id="realProjectsGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
+                <!-- Los proyectos reales se cargarán aquí -->
+            </div>
         </div>
-        
+        </div>
     </section>
 
     <!-- FORMULARIO INTELIGENTE -->
@@ -1620,7 +1552,7 @@
                 </div>
 
                 <div class="form-buttons">
-                    <button class="btn-form btn-next" onclick="nextStep()" disabled="" id="step1Next">Continuar</button>
+                    <button class="btn-form btn-next" onclick="nextStep()" disabled id="step1Next">Continuar</button>
                 </div>
             </div>
 
@@ -1659,7 +1591,7 @@
 
                 <div class="form-buttons">
                     <button class="btn-form btn-back" onclick="prevStep()">Atrás</button>
-                    <button class="btn-form btn-next" onclick="nextStep()" disabled="" id="step2Next">Continuar</button>
+                    <button class="btn-form btn-next" onclick="nextStep()" disabled id="step2Next">Continuar</button>
                 </div>
             </div>
 
@@ -1711,12 +1643,12 @@
             <div class="form-step" id="step4">
                 <div class="form-group">
                     <label class="form-label">🏢 ¿Cómo se llama tu negocio?</label>
-                    <input type="text" class="form-input" id="businessName" placeholder="Ej: Restaurante El Sabor, Peluquería Moderna" required="">
+                    <input type="text" class="form-input" id="businessName" placeholder="Ej: Restaurante El Sabor, Peluquería Moderna" required>
                 </div>
 
                 <div class="form-group">
                     <label class="form-label">📄 Cuéntame en 1 o 2 frases sobre tu negocio</label>
-                    <textarea class="form-input" id="businessDescription" placeholder="Ej: Restaurante de comida colombiana con 15 años de experiencia. Hacemos la mejor bandeja paisa de la ciudad." rows="3" required=""></textarea>
+                    <textarea class="form-input" id="businessDescription" placeholder="Ej: Restaurante de comida colombiana con 15 años de experiencia. Hacemos la mejor bandeja paisa de la ciudad." rows="3" required></textarea>
                     <small style="color: var(--color-text-light); font-size: 0.9rem; display: block; margin-top: 0.5rem;">Esto lo voy a usar en tu página de muestra</small>
                 </div>
 
@@ -1728,7 +1660,7 @@
 
                 <div class="form-buttons">
                     <button class="btn-form btn-back" onclick="prevStep()">Atrás</button>
-                    <button class="btn-form btn-next" onclick="nextStep()" disabled="" id="step4Next">Continuar</button>
+                    <button class="btn-form btn-next" onclick="nextStep()" disabled id="step4Next">Continuar</button>
                 </div>
             </div>
 
@@ -1737,12 +1669,12 @@
             <div class="form-step" id="step5">
                 <div class="form-group">
                     <label class="form-label">📱 Tu número de WhatsApp</label>
-                    <input type="tel" class="form-input" id="whatsapp" placeholder="+57 300 123 4567" required="">
+                    <input type="tel" class="form-input" id="whatsapp" placeholder="+57 300 123 4567" required>
                 </div>
 
                 <div class="form-group">
                     <label class="form-label">👤 Tu nombre</label>
-                    <input type="text" class="form-input" id="name" placeholder="Tu nombre completo" required="">
+                    <input type="text" class="form-input" id="name" placeholder="Tu nombre completo" required>
                 </div>
 
                 <div class="form-group">
@@ -1766,7 +1698,7 @@
 
                 <div class="form-buttons">
                     <button class="btn-form btn-back" onclick="prevStep()">Atrás</button>
-                    <button class="btn-form btn-next" onclick="submitForm()" disabled="" id="step5Next">Finalizar</button>
+                    <button class="btn-form btn-next" onclick="submitForm()" disabled id="step5Next">Finalizar</button>
                 </div>
             </div>
 
@@ -1835,7 +1767,7 @@
     <!-- WHATSAPP FLOTANTE -->
     <a href="https://wa.me/573154674742" class="whatsapp-float" target="_blank" title="Chatea por WhatsApp">
         <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-            <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-5.245 1.408 1.408-5.245-0.292-0.507c-1.224-2.162-1.87-4.588-1.87-7.070 0-7.515 6.118-13.633 13.633-13.633s13.633 6.118 13.633 13.633-6.118 13.633-13.633 13.633zM21.933 18.667c-0.382-0.191-2.267-1.119-2.619-1.247s-0.607-0.191-0.863 0.191c-0.256 0.382-0.991 1.247-1.215 1.503s-0.447 0.287-0.829 0.096c-0.382-0.191-1.613-0.595-3.071-1.894-1.135-1.012-1.901-2.262-2.124-2.644s-0.024-0.589 0.168-0.779c0.172-0.171 0.382-0.446 0.573-0.669s0.256-0.382 0.382-0.638c0.127-0.256 0.064-0.478-0.032-0.669s-0.863-2.076-1.183-2.843c-0.311-0.747-0.627-0.646-0.863-0.658-0.223-0.012-0.478-0.015-0.733-0.015s-0.669 0.096-1.021 0.478c-0.351 0.382-1.343 1.311-1.343 3.197s1.375 3.707 1.567 3.963c0.191 0.256 2.704 4.13 6.553 5.791 0.915 0.395 1.629 0.631 2.186 0.808 0.919 0.292 1.755 0.251 2.414 0.152 0.737-0.11 2.267-0.927 2.587-1.822s0.32-1.663 0.224-1.822c-0.096-0.159-0.351-0.256-0.733-0.446z"></path>
+            <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-5.245 1.408 1.408-5.245-0.292-0.507c-1.224-2.162-1.87-4.588-1.87-7.070 0-7.515 6.118-13.633 13.633-13.633s13.633 6.118 13.633 13.633-6.118 13.633-13.633 13.633zM21.933 18.667c-0.382-0.191-2.267-1.119-2.619-1.247s-0.607-0.191-0.863 0.191c-0.256 0.382-0.991 1.247-1.215 1.503s-0.447 0.287-0.829 0.096c-0.382-0.191-1.613-0.595-3.071-1.894-1.135-1.012-1.901-2.262-2.124-2.644s-0.024-0.589 0.168-0.779c0.172-0.171 0.382-0.446 0.573-0.669s0.256-0.382 0.382-0.638c0.127-0.256 0.064-0.478-0.032-0.669s-0.863-2.076-1.183-2.843c-0.311-0.747-0.627-0.646-0.863-0.658-0.223-0.012-0.478-0.015-0.733-0.015s-0.669 0.096-1.021 0.478c-0.351 0.382-1.343 1.311-1.343 3.197s1.375 3.707 1.567 3.963c0.191 0.256 2.704 4.13 6.553 5.791 0.915 0.395 1.629 0.631 2.186 0.808 0.919 0.292 1.755 0.251 2.414 0.152 0.737-0.11 2.267-0.927 2.587-1.822s0.32-1.663 0.224-1.822c-0.096-0.159-0.351-0.256-0.733-0.446z"/>
         </svg>
     </a>
 
@@ -1844,44 +1776,10 @@
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal()">×</button>
             <div class="modal-body" id="modalBody">
-                <h2 style="font-family: var(--font-display); font-size: 2.5rem; margin-bottom: 1rem; color: var(--color-primary);">Hot Dog Express - Profesional</h2>
-                <p style="font-size: 1.2rem; color: var(--color-text-light); margin-bottom: 2rem;">Ejemplo de paquete Profesional - 5 secciones</p>
-                
-                <!-- BOTONES DE ACCIÓN ARRIBA -->
-                <div style="display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap;">
-                    
-                        <a href="https://webloom24.github.io/web-paquete-profesional/" target="_blank" class="btn btn-secondary" style="flex: 1; min-width: 200px; text-decoration: none; display: flex; align-items: center; justify-content: center; background: var(--color-secondary); color: white; border: none;">
-                            <span>🌐 Abrir sitio completo</span>
-                        </a>
-                    
-                    <button class="btn btn-primary" style="flex: 1; min-width: 200px; justify-content: center;" onclick="selectPackage('profesional')">
-                        <span>Quiero algo así para mi negocio</span>
-                    </button>
-                </div>
-                
-                
-                    <div style="margin-bottom: 2rem;">
-                        <iframe src="https://webloom24.github.io/web-paquete-profesional/" style="width: 100%; height: 500px; border: 3px solid var(--color-border); border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" title="Vista previa de Hot Dog Express - Profesional"></iframe>
-                        <p style="text-align: center; margin-top: 1rem; color: var(--color-text-light); font-size: 0.9rem;">
-                            ⬆️ Vista previa del sitio en vivo - Desplázate dentro del iframe para explorar
-                        </p>
-                    </div>
-                
-
-                <div class="modal-features">
-                    <h4>✨ Características incluidas en el paquete Profesional</h4>
-                    <ul>
-                        <li>5 secciones completas</li><li>Sobre Nosotros + Testimonios</li><li>Formulario funcional</li><li>Entrega en 7-10 días</li>
-                    </ul>
-                </div>
-
-                <div style="background: rgba(0, 217, 163, 0.1); padding: 1.5rem; border-radius: 12px; margin-top: 2rem;">
-                    <p style="font-size: 1.1rem; margin-bottom: 1rem;"><strong>💡 Resultado:</strong> Experiencia completa para atraer clientes</p>
-                    <p style="font-size: 0.9rem; color: var(--color-text-light);">*Proyecto de demostración para ilustrar capacidades del paquete</p>
-                </div>
+                <!-- Contenido del proyecto se carga dinámicamente -->
             </div>
             <!-- Indicador de scroll -->
-            <div class="scroll-indicator hidden" id="scrollIndicator" onclick="scrollModalDown()">
+            <div class="scroll-indicator" id="scrollIndicator" onclick="scrollModalDown()">
                 <span>Baja para ver más</span>
                 <span class="scroll-arrow">👇</span>
             </div>
@@ -2395,9 +2293,5 @@ ${formData.sections}
         // Validación del input "Otro"
         document.getElementById('otherBusiness').addEventListener('input', validateStep1);
     </script>
-
-
-            <script>// Write JavaScript here</script>
-        
-    
 </body>
+</html>
