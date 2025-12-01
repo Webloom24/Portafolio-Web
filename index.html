@@ -296,6 +296,25 @@
             cursor: pointer;
             opacity: 1;
             transform: scale(1);
+            position: relative;
+        }
+        
+        /* Indicador visual de que es clickeable */
+        .project-card::after {
+            content: '👆 Haz clic para ver más';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 217, 163, 0.95), transparent);
+            color: white;
+            text-align: center;
+            padding: 1.5rem 1rem 1rem;
+            font-weight: 700;
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: opacity var(--transition-base);
+            pointer-events: none;
         }
         
         .project-card.hidden {
@@ -303,8 +322,12 @@
         }
         
         .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 40px rgba(0, 217, 163, 0.25);
+        }
+        
+        .project-card:hover::after {
+            opacity: 1;
         }
         
         .project-image {
@@ -1455,6 +1478,9 @@
                     <span style="font-size: 2rem;">💡</span> Compara los 3 planes <span style="font-size: 2rem;">💡</span>
                 </h3>
                 <p style="color: var(--color-text-light); margin-top: 0.5rem;">Hice la página del mismo restaurante en los 3 planes para que veas la diferencia</p>
+                <p style="color: var(--color-accent); font-weight: 600; margin-top: 1rem; font-size: 1rem;">
+                    👆 Haz clic en cualquier tarjeta para ver los detalles completos
+                </p>
             </div>
             
             <div class="filter-tabs">
@@ -1484,6 +1510,9 @@
                     <span style="font-size: 2rem;">🌟</span> Páginas Reales de Mis Clientes <span style="font-size: 2rem;">🌟</span>
                 </h3>
                 <p style="color: var(--color-text-light); margin-top: 0.5rem;">Estas páginas ya están en Internet ayudando a negocios reales</p>
+                <p style="color: var(--color-accent); font-weight: 600; margin-top: 1rem; font-size: 1rem;">
+                    👆 Haz clic en cualquier tarjeta para verlas en detalle
+                </p>
             </div>
             
             <div id="realProjectsGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
