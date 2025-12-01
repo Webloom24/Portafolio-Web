@@ -299,24 +299,6 @@
             position: relative;
         }
         
-        /* Indicador visual de que es clickeable */
-        .project-card::after {
-            content: '👆 Haz clic para ver más';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0, 217, 163, 0.95), transparent);
-            color: white;
-            text-align: center;
-            padding: 1.5rem 1rem 1rem;
-            font-weight: 700;
-            font-size: 0.9rem;
-            opacity: 0;
-            transition: opacity var(--transition-base);
-            pointer-events: none;
-        }
-        
         .project-card.hidden {
             display: none;
         }
@@ -324,10 +306,6 @@
         .project-card:hover {
             transform: translateY(-8px) scale(1.02);
             box-shadow: 0 12px 40px rgba(0, 217, 163, 0.25);
-        }
-        
-        .project-card:hover::after {
-            opacity: 1;
         }
         
         .project-image {
@@ -431,6 +409,25 @@
             font-size: 0.9rem;
             font-weight: 500;
             color: var(--color-accent-dark);
+        }
+        
+        /* Call to action permanente en las tarjetas */
+        .project-cta {
+            margin-top: 1.5rem;
+            padding: 0.85rem 1.25rem;
+            background: linear-gradient(135deg, var(--color-accent), var(--color-secondary));
+            color: white;
+            text-align: center;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: all var(--transition-base);
+            box-shadow: 0 4px 15px rgba(0, 217, 163, 0.2);
+        }
+        
+        .project-card:hover .project-cta {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 217, 163, 0.35);
         }
         
         /* === COMPARADOR DE PAQUETES === */
@@ -1931,6 +1928,9 @@
                         <p class="project-description">${project.description}</p>
                         <div class="project-impact">
                             ${project.isReal ? '🌐' : '⚡'} ${project.impact}
+                        </div>
+                        <div class="project-cta">
+                            👉 Clic aquí para ver más detalles
                         </div>
                     </div>
                 `;
