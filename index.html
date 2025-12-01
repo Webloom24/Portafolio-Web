@@ -1,0 +1,2403 @@
+<!DOCTYPE html>
+<html>
+<head>
+            <style>.lw { font-size: 60px; }</style>
+        </head>
+        <body style="overflow: auto;">
+            
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webloom - Sitios Web Que Convierten Visitantes en Clientes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Paleta de colores profesional con personalidad */
+            --color-primary: #0A0E27;
+            --color-accent: #00D9A3;
+            --color-accent-dark: #00B589;
+            --color-secondary: #6C5CE7;
+            --color-text: #1A1A2E;
+            --color-text-light: #6B7280;
+            --color-bg: #FAFBFC;
+            --color-white: #FFFFFF;
+            --color-border: #E5E7EB;
+            
+            /* Tipografía distintiva */
+            --font-display: 'Syne', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            
+            /* Espaciado sistemático */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --spacing-xl: 6rem;
+            
+            /* Animaciones */
+            --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-smooth: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* === HERO SECTION === */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--color-primary) 0%, #1a1f3a 100%);
+            position: relative;
+            overflow: hidden;
+            padding: var(--spacing-md);
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(0, 217, 163, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-50px, -50px) scale(1.1); }
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s var(--transition-smooth);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            color: var(--color-white);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+        
+        .hero h1 .highlight {
+            color: var(--color-accent);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .hero h1 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--color-accent);
+            animation: slideIn 0.8s var(--transition-smooth) 0.5s both;
+        }
+        
+        @keyframes slideIn {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: var(--spacing-lg);
+            font-weight: 300;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* === BOTONES ÚNICOS === */
+        .btn {
+            padding: 1rem 2.5rem;
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all var(--transition-base);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary {
+            background: var(--color-accent);
+            color: var(--color-primary);
+            box-shadow: 0 4px 20px rgba(0, 217, 163, 0.3);
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .btn-primary:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 217, 163, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--color-accent);
+            transform: translateY(-2px);
+        }
+        
+        .btn span {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* === SECCIÓN PORTFOLIO === */
+        .portfolio {
+            padding: var(--spacing-xl) var(--spacing-md);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .section-header h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--color-text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* === FILTROS ÚNICOS === */
+        .filter-tabs {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            background: var(--color-white);
+            border: 2px solid var(--color-border);
+            border-radius: 50px;
+            font-family: var(--font-display);
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--color-text);
+            cursor: pointer;
+            transition: all var(--transition-base);
+            position: relative;
+        }
+        
+        .filter-btn::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, var(--color-accent), var(--color-secondary));
+            border-radius: 50px;
+            opacity: 0;
+            transition: opacity var(--transition-base);
+            z-index: -1;
+        }
+        
+        .filter-btn.active::before {
+            opacity: 1;
+        }
+        
+        .filter-btn.active {
+            color: var(--color-white);
+            border-color: transparent;
+        }
+        
+        .filter-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* === GRID DE PROYECTOS === */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: var(--spacing-lg);
+        }
+        
+        .project-card {
+            background: var(--color-white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all var(--transition-smooth);
+            cursor: pointer;
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .project-card.hidden {
+            display: none;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 240px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: background-size 0.6s var(--transition-smooth);
+        }
+        
+        /* Overlay semitransparente para mantener legibilidad del texto */
+        .project-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
+            z-index: 1;
+        }
+        
+        .project-image-text {
+            position: relative;
+            z-index: 2;
+            color: white;
+            font-family: var(--font-display);
+            font-size: 2rem;
+            text-align: center;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.9);
+            padding: 0 1rem;
+        }
+        
+        .project-image-subtitle {
+            position: relative;
+            z-index: 2;
+            color: white;
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            text-align: center;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+            margin-top: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 700;
+        }
+        
+        /* Efecto hover en la imagen de fondo */
+        .project-card:hover .project-image {
+            background-size: 110%;
+        }
+        
+        .project-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+        
+        .project-badge.basico { color: #10b981; }
+        .project-badge.profesional { color: #3b82f6; }
+        .project-badge.premium { color: #8b5cf6; }
+        
+        .project-content {
+            padding: 1.5rem;
+        }
+        
+        .project-title {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-description {
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-impact {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(0, 217, 163, 0.1);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--color-accent-dark);
+        }
+        
+        /* === COMPARADOR DE PAQUETES === */
+        .packages {
+            padding: var(--spacing-xl) var(--spacing-md);
+            background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-white) 100%);
+        }
+        
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .package-card {
+            background: var(--color-white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+            transition: all var(--transition-smooth);
+            position: relative;
+            border: 3px solid transparent;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+        
+        .package-card.featured {
+            border-color: var(--color-accent);
+            transform: scale(1.05);
+        }
+        
+        .package-popular {
+            position: absolute;
+            top: -12px;
+            right: 2rem;
+            padding: 0.4rem 1.2rem;
+            background: var(--color-accent);
+            color: var(--color-primary);
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            font-weight: 700;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .package-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .package-name {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .package-price {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+        }
+        
+        .package-description {
+            color: var(--color-text-light);
+            margin-bottom: 1.5rem;
+            min-height: 60px;
+        }
+        
+        .package-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .package-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--color-border);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+        }
+        
+        .package-features li::before {
+            content: '✓';
+            color: var(--color-accent);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        .package-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .btn-package {
+            padding: 0.9rem 1.5rem;
+            font-family: var(--font-display);
+            font-weight: 600;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition-base);
+            text-align: center;
+            font-size: 0.95rem;
+        }
+        
+        .btn-select {
+            background: var(--color-accent);
+            color: var(--color-primary);
+        }
+        
+        .btn-select:hover {
+            background: var(--color-accent-dark);
+            transform: translateY(-2px);
+        }
+        
+        .btn-example {
+            background: transparent;
+            color: var(--color-primary);
+            border: 2px solid var(--color-border);
+        }
+        
+        .btn-example:hover {
+            background: var(--color-bg);
+            border-color: var(--color-accent);
+        }
+        
+        /* === FORMULARIO INTELIGENTE === */
+        .smart-form {
+            padding: var(--spacing-xl) var(--spacing-md);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .form-container {
+            background: var(--color-white);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-step {
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        .form-step.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .form-progress {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .form-progress::before {
+            content: '';
+            position: absolute;
+            top: 12px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--color-border);
+            z-index: 0;
+        }
+        
+        .progress-line {
+            position: absolute;
+            top: 12px;
+            left: 0;
+            height: 3px;
+            background: var(--color-accent);
+            transition: width 0.5s var(--transition-smooth);
+            z-index: 1;
+        }
+        
+        .progress-step {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--color-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            position: relative;
+            z-index: 2;
+            transition: all var(--transition-base);
+        }
+        
+        .progress-step.active,
+        .progress-step.completed {
+            background: var(--color-accent);
+            color: var(--color-primary);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+        
+        .option-grid {
+            display: grid;
+            gap: 0.75rem;
+        }
+        
+        .option-label {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: var(--color-bg);
+            border: 2px solid var(--color-border);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all var(--transition-base);
+            font-size: 0.95rem;
+        }
+        
+        .option-label:hover {
+            background: var(--color-white);
+            border-color: var(--color-accent);
+        }
+        
+        .option-input {
+            display: none;
+        }
+        
+        .option-input:checked + .option-label {
+            background: var(--color-white);
+            border-color: var(--color-accent);
+            box-shadow: 0 4px 15px rgba(0, 217, 163, 0.2);
+        }
+        
+        /* === CHECKBOX GRID === */
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 0.75rem;
+        }
+        
+        .checkbox-item {
+            position: relative;
+        }
+        
+        .checkbox-input {
+            display: none;
+        }
+        
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 1.5rem;
+            background: var(--color-bg);
+            border: 2px solid var(--color-border);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all var(--transition-base);
+            font-size: 0.95rem;
+        }
+        
+        .checkbox-label::before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--color-border);
+            border-radius: 4px;
+            transition: all var(--transition-base);
+        }
+        
+        .checkbox-label:hover {
+            background: var(--color-white);
+            border-color: var(--color-accent);
+        }
+        
+        .checkbox-input:checked + .checkbox-label {
+            background: var(--color-white);
+            border-color: var(--color-accent);
+            box-shadow: 0 4px 15px rgba(0, 217, 163, 0.2);
+        }
+        
+        .checkbox-input:checked + .checkbox-label::before {
+            background: var(--color-accent);
+            border-color: var(--color-accent);
+            content: '✓';
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+        
+        textarea.form-input {
+            resize: vertical;
+            min-height: 100px;
+            font-family: var(--font-body);
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            border: 2px solid var(--color-border);
+            border-radius: 12px;
+            transition: all var(--transition-base);
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            box-shadow: 0 4px 15px rgba(0, 217, 163, 0.1);
+        }
+        
+        .form-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .btn-form {
+            flex: 1;
+            padding: 1rem;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1rem;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+        
+        .btn-next {
+            background: var(--color-accent);
+            color: var(--color-primary);
+        }
+        
+        .btn-next:hover:not(:disabled) {
+            background: var(--color-accent-dark);
+            transform: translateY(-2px);
+        }
+        
+        .btn-next:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .btn-back {
+            background: var(--color-bg);
+            color: var(--color-primary);
+        }
+        
+        .btn-back:hover {
+            background: var(--color-border);
+        }
+        
+        /* === CONFIRMACIÓN === */
+        .confirmation {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .confirmation-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: scaleIn 0.5s var(--transition-smooth);
+        }
+        
+        @keyframes scaleIn {
+            from { transform: scale(0); }
+            to { transform: scale(1); }
+        }
+        
+        .confirmation h3 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+        
+        .confirmation-message {
+            background: var(--color-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            line-height: 1.8;
+        }
+        
+        /* === CREDIBILIDAD === */
+        .trust {
+            padding: var(--spacing-lg) var(--spacing-md);
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+        
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .trust-item {
+            padding: 2rem;
+        }
+        
+        .trust-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .trust-title {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .trust-description {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+        }
+        
+        /* === BOTÓN WHATSAPP FLOTANTE === */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            transition: all var(--transition-base);
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+        }
+        
+        .whatsapp-float svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
+        }
+        
+        /* === EASTER EGG === */
+        .easter-egg {
+            padding: var(--spacing-xl) var(--spacing-md);
+            background: linear-gradient(135deg, var(--color-secondary) 0%, #a29bfe 100%);
+            text-align: center;
+            color: var(--color-white);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s var(--transition-smooth);
+        }
+        
+        .easter-egg.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .easter-egg h3 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .easter-egg p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .bonus-box {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 2rem;
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+        
+        /* === MODAL === */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        .modal.active {
+            display: flex;
+            animation: fadeIn 0.3s ease-in;
+        }
+        
+        .modal-content {
+            background: var(--color-white);
+            border-radius: 20px;
+            max-width: 900px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--color-bg);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: all var(--transition-base);
+            z-index: 10;
+        }
+        
+        .modal-close:hover {
+            background: var(--color-primary);
+            color: var(--color-white);
+            transform: rotate(90deg);
+        }
+        
+        .modal-body {
+            padding: 3rem;
+            position: relative;
+        }
+        
+        /* Indicador de scroll */
+        .scroll-indicator {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--color-accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 8px 25px rgba(0, 217, 163, 0.4);
+            z-index: 10001;
+            animation: bounceUpDown 2s infinite;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .scroll-indicator:hover {
+            transform: translateX(-50%) translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 217, 163, 0.5);
+        }
+        
+        .scroll-indicator.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .scroll-arrow {
+            font-size: 1.2rem;
+            animation: arrowBounce 1.5s infinite;
+        }
+        
+        @keyframes bounceUpDown {
+            0%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+        }
+        
+        @keyframes arrowBounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(5px);
+            }
+        }
+        
+        .modal-images {
+            display: grid;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .modal-image {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .modal-features {
+            background: var(--color-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+        
+        .modal-features h4 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--color-primary);
+        }
+        
+        .modal-features ul {
+            list-style: none;
+        }
+        
+        .modal-features li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .modal-features li::before {
+            content: '✓';
+            color: var(--color-accent);
+            font-weight: 700;
+        }
+        
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            /* Hero */
+            .hero {
+                padding: 4rem 1rem 3rem;
+                min-height: auto;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+                padding: 0 0.5rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+                gap: 1rem;
+                padding: 0;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+                padding: 1rem 1.5rem;
+                font-size: 1rem;
+            }
+            
+            /* Section headers */
+            .section-header {
+                padding: 0 1rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .section-header p {
+                font-size: 0.95rem;
+            }
+            
+            /* Projects */
+            .projects-grid,
+            #projectsGrid,
+            #realProjectsGrid {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem;
+                padding: 0 1rem;
+            }
+            
+            .project-card {
+                margin: 0;
+            }
+            
+            /* Packages */
+            .packages {
+                padding: 3rem 1rem;
+            }
+            
+            .packages-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 0;
+            }
+            
+            .package-card {
+                margin: 0;
+            }
+            
+            .package-card.featured {
+                transform: scale(1);
+                margin: 0;
+            }
+            
+            .package-buttons {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+            
+            .btn-package {
+                width: 100%;
+            }
+            
+            /* Filter tabs */
+            .filter-tabs {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem;
+                padding: 0 1rem;
+            }
+            
+            .filter-btn {
+                padding: 0.75rem 0.5rem;
+                font-size: 0.85rem;
+            }
+            
+            /* Form */
+            .smart-form {
+                padding: 3rem 1rem;
+            }
+            
+            .form-container {
+                padding: 1.5rem 1rem;
+                margin: 0;
+            }
+            
+            .form-progress {
+                gap: 0.5rem;
+                margin-bottom: 2rem;
+            }
+            
+            .progress-step {
+                width: 35px;
+                height: 35px;
+                font-size: 0.9rem;
+            }
+            
+            .form-label {
+                font-size: 1rem;
+            }
+            
+            .option-grid {
+                gap: 0.5rem;
+            }
+            
+            .option-label {
+                padding: 0.85rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .checkbox-grid {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+            
+            .checkbox-label {
+                padding: 0.85rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .form-input,
+            textarea.form-input {
+                padding: 0.85rem 1rem;
+                font-size: 0.95rem;
+            }
+            
+            .form-buttons {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+            
+            .btn-form {
+                width: 100%;
+            }
+            
+            /* WhatsApp button */
+            .whatsapp-float {
+                bottom: 1.5rem;
+                right: 1.5rem;
+                width: 60px;
+                height: 60px;
+            }
+            
+            .whatsapp-float svg {
+                width: 32px;
+                height: 32px;
+            }
+            
+            /* Modal */
+            .modal-content {
+                width: 95%;
+                max-width: 95%;
+                margin: 1rem;
+                max-height: 90vh;
+            }
+            
+            .modal-body {
+                padding: 1.5rem 1rem;
+            }
+            
+            .modal-header h3 {
+                font-size: 1.3rem;
+            }
+            
+            .modal-buttons {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+            
+            .modal-buttons .btn {
+                width: 100%;
+            }
+            
+            /* Scroll indicator en móvil */
+            .scroll-indicator {
+                bottom: 20px;
+                padding: 0.6rem 1.2rem;
+                font-size: 0.85rem;
+            }
+            
+            .scroll-arrow {
+                font-size: 1rem;
+            }
+            
+            /* Trust section */
+            .trust {
+                padding: 3rem 1rem;
+            }
+            
+            .trust-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            /* Confirmation */
+            .confirmation h3 {
+                font-size: 1.5rem;
+            }
+            
+            .confirmation-message {
+                font-size: 0.95rem;
+            }
+        }
+        
+        /* Extra small devices */
+        @media (max-width: 380px) {
+            .hero-content h1 {
+                font-size: 1.75rem;
+            }
+            
+            .package-price {
+                font-size: 2rem;
+            }
+            
+            .filter-tabs {
+                grid-template-columns: 1fr;
+            }
+            
+            .progress-step {
+                width: 30px;
+                height: 30px;
+                font-size: 0.8rem;
+            }
+        }
+        
+        /* === UTILITY CLASSES === */
+        .hidden {
+            display: none !important;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+    </style>
+
+
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Tu negocio en Internet, <span class="highlight">funcionando 24/7</span></h1>
+            <p>Creo páginas web profesionales para negocios en Colombia. Con tu web, tus clientes te pueden encontrar en Google y contactarte cuando quieran.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollToSection('portfolio')">
+                    <span>📱 Ver páginas que he hecho</span>
+                </button>
+                <button class="btn btn-secondary" onclick="scrollToSection('formulario')">
+                    <span>⚡ Quiero mi página web</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PACKAGES SECTION -->
+    <section class="packages" id="paquetes">
+        <div class="section-header">
+            <h2>Elige el plan que se ajuste a tu bolsillo</h2>
+            <p>Desde una página sencilla hasta una completa con todo lo que necesitas</p>
+        </div>
+
+        <div class="packages-grid">
+            <!-- BÁSICO -->
+            <div class="package-card">
+                <div class="package-icon">🌱</div>
+                <div class="package-name">Plan Básico</div>
+                <div class="package-price">$160.000</div>
+                <div class="package-description">Perfecto si solo necesitas estar en Internet</div>
+                <ul class="package-features">
+                    <li>3 partes en tu página (inicio, servicios, contacto)</li>
+                    <li>Se ve bien en celular y computador</li>
+                    <li>Botón para que te escriban por WhatsApp</li>
+                    <li>Te la entrego en 3-5 días</li>
+                </ul>
+                <div class="package-buttons">
+                    <button class="btn-package btn-example" onclick="filterByPackage('basico')">Ver ejemplos</button>
+                    <button class="btn-package btn-select" onclick="selectPackage('basico')">Elegir este plan</button>
+                </div>
+            </div>
+
+            <!-- PROFESIONAL -->
+            <div class="package-card featured">
+                <div class="package-popular">Más popular</div>
+                <div class="package-icon">🌿</div>
+                <div class="package-name">Plan Profesional</div>
+                <div class="package-price">$260.000</div>
+                <div class="package-description">Ideal si quieres conseguir más clientes</div>
+                <ul class="package-features">
+                    <li>5 partes en tu página (más información)</li>
+                    <li>Formulario para que te contacten</li>
+                    <li>Botón flotante de WhatsApp siempre visible</li>
+                    <li>Galería de fotos o testimonios</li>
+                    <li>Te la entrego en 7-10 días</li>
+                </ul>
+                <div class="package-buttons">
+                    <button class="btn-package btn-example" onclick="filterByPackage('profesional')">Ver ejemplos</button>
+                    <button class="btn-package btn-select" onclick="selectPackage('profesional')">Elegir este plan</button>
+                </div>
+            </div>
+
+            <!-- PREMIUM -->
+            <div class="package-card">
+                <div class="package-icon">🌺</div>
+                <div class="package-name">Plan Premium</div>
+                <div class="package-price">$360.000</div>
+                <div class="package-description">Tu página completa y destacada en Google</div>
+                <ul class="package-features">
+                    <li>7 partes completas (página robusta)</li>
+                    <li>Animaciones y movimientos profesionales</li>
+                    <li>Configuración para aparecer en Google</li>
+                    <li>Blog o sección de noticias</li>
+                    <li>Elementos interactivos únicos</li>
+                    <li>Te la entrego en 10-15 días</li>
+                </ul>
+                <div class="package-buttons">
+                    <button class="btn-package btn-example" onclick="filterByPackage('premium')">Ver ejemplos</button>
+                    <button class="btn-package btn-select" onclick="selectPackage('premium')">Elegir este plan</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section class="portfolio" id="portfolio">
+        <div class="section-header">
+            <h2>Páginas web que he creado</h2>
+            <p>Cada página está hecha especialmente para cada negocio, nada de plantillas genéricas</p>
+        </div>
+
+        <!-- EJEMPLOS DEMOSTRATIVOS DE PAQUETES -->
+        <div style="margin-bottom: var(--spacing-xl);">
+            <div style="text-align: center; margin-bottom: var(--spacing-lg);">
+                <h3 style="font-family: var(--font-display); font-size: 1.8rem; color: var(--color-primary); margin-bottom: 0.5rem; display: inline-flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-size: 2rem;">💡</span> Compara los 3 planes <span style="font-size: 2rem;">💡</span>
+                </h3>
+                <p style="color: var(--color-text-light); margin-top: 0.5rem;">Hice la página del mismo restaurante en los 3 planes para que veas la diferencia</p>
+            </div>
+            
+            <div class="filter-tabs">
+                <button class="filter-btn" data-filter="todos">Todos</button>
+                <button class="filter-btn" data-filter="basico">🌱 Básico</button>
+                <button class="filter-btn active" data-filter="profesional">🌿 Profesional</button>
+                <button class="filter-btn" data-filter="premium">🌺 Premium</button>
+            </div>
+            
+            <div id="projectsGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2rem; max-width: 1400px; margin: 0 auto;"><div class="project-card" data-type="profesional">
+                    <div class="project-image" style="background-image: url('https://i.imgur.com/jAJS7s2.png');">
+                        <div class="project-badge profesional">
+                        🌿 Profesional
+                       </div>
+                        <div class="project-image-text">Hot Dog Express</div>
+                        <div class="project-image-subtitle">PROFESIONAL</div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Hot Dog Express - Profesional</h3>
+                        <p class="project-description">Ejemplo de paquete Profesional - 5 secciones</p>
+                        <div class="project-impact">
+                            ⚡ Experiencia completa para atraer clientes
+                        </div>
+                    </div>
+                </div></div>
+        </div>
+
+        <!-- DIVISOR VISUAL -->
+        <div style="max-width: 800px; margin: var(--spacing-xl) auto; text-align: center; position: relative;">
+            <div style="height: 2px; background: linear-gradient(to right, transparent, var(--color-border), transparent);"></div>
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--color-bg); padding: 0 2rem;">
+                <p style="font-family: var(--font-display); color: var(--color-text-light); font-weight: 600;">Páginas reales que ya están funcionando</p>
+            </div>
+        </div>
+
+        <!-- TRABAJOS REALES DESTACADOS -->
+        <div style="margin-bottom: var(--spacing-xl);">
+            <div style="text-align: center; margin-bottom: var(--spacing-lg);">
+                <h3 style="font-family: var(--font-display); font-size: 1.8rem; color: var(--color-primary); margin-bottom: 0.5rem; display: inline-flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-size: 2rem;">🌟</span> Páginas Reales de Mis Clientes <span style="font-size: 2rem;">🌟</span>
+                </h3>
+                <p style="color: var(--color-text-light); margin-top: 0.5rem;">Estas páginas ya están en Internet ayudando a negocios reales</p>
+            </div>
+            
+            <div id="realProjectsGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;"><div class="project-card" data-type="premium">
+                    <div class="project-image" style="background-image: url('https://i.imgur.com/Rt4LNWo.png');">
+                        <div class="project-badge premium" style="background: white; color: var(--color-primary); border: 2px solid var(--color-accent);">
+                        ✓ EN VIVO - 🌺 Premium
+                       </div>
+                        <div class="project-image-text">Fundación VIDARELAX</div>
+                        
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Fundación VIDARELAX</h3>
+                        <p class="project-description">Fundación para pacientes oncológicos en Bucaramanga</p>
+                        <div class="project-impact">
+                            🌐 Sitio web premium en producción
+                        </div>
+                    </div>
+                </div><div class="project-card" data-type="profesional">
+                    <div class="project-image" style="background-image: url('https://i.imgur.com/Z6rp2iZ.png');">
+                        <div class="project-badge profesional" style="background: white; color: var(--color-primary); border: 2px solid var(--color-accent);">
+                        ✓ EN VIVO - 🌿 Profesional
+                       </div>
+                        <div class="project-image-text">JuanDa Entrenador Personal</div>
+                        
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">JuanDa Entrenador Personal</h3>
+                        <p class="project-description">Sitio web para entrenador personal profesional</p>
+                        <div class="project-impact">
+                            🌐 Captación de clientes efectiva
+                        </div>
+                    </div>
+                </div><div class="project-card" data-type="basico">
+                    <div class="project-image" style="background-image: url('https://i.imgur.com/9KiHSYN.png');">
+                        <div class="project-badge basico" style="background: white; color: var(--color-primary); border: 2px solid var(--color-accent);">
+                        ✓ EN VIVO - 🌱 Básico
+                       </div>
+                        <div class="project-image-text">Granos Surcaribe</div>
+                        
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Granos Surcaribe</h3>
+                        <p class="project-description">Empresa comercializadora de granos y productos agrícolas</p>
+                        <div class="project-impact">
+                            🌐 Presencia digital establecida
+                        </div>
+                    </div>
+                </div></div>
+        </div>
+        
+    </section>
+
+    <!-- FORMULARIO INTELIGENTE -->
+    <section class="smart-form" id="formulario">
+        <div class="section-header">
+            <h2>Cuéntame sobre tu negocio</h2>
+            <p>Responde estas preguntas para darte la mejor propuesta y crear tu muestra gratis</p>
+        </div>
+
+        <div class="form-container">
+            <div class="form-progress">
+                <div class="progress-line" id="progressLine"></div>
+                <div class="progress-step active">1</div>
+                <div class="progress-step">2</div>
+                <div class="progress-step">3</div>
+                <div class="progress-step">4</div>
+                <div class="progress-step">5</div>
+            </div>
+
+            <!-- PASO 1 -->
+            <div class="form-step active" id="step1">
+                <div class="form-group">
+                    <label class="form-label">📝 ¿Qué tipo de negocio tienes?</label>
+                    <div class="option-grid">
+                        <input type="radio" name="business-type" id="restaurant" value="Restaurante/Café" class="option-input">
+                        <label for="restaurant" class="option-label">🍽️ Restaurante / Café</label>
+                        
+                        <input type="radio" name="business-type" id="store" value="Tienda/Comercio" class="option-input">
+                        <label for="store" class="option-label">🛍️ Tienda / Comercio</label>
+                        
+                        <input type="radio" name="business-type" id="services" value="Servicios profesionales" class="option-input">
+                        <label for="services" class="option-label">💼 Servicios profesionales</label>
+                        
+                        <input type="radio" name="business-type" id="health" value="Salud/Bienestar" class="option-input">
+                        <label for="health" class="option-label">⚕️ Salud / Bienestar</label>
+                        
+                        <input type="radio" name="business-type" id="other" value="Otro" class="option-input">
+                        <label for="other" class="option-label">🏢 Otro</label>
+                    </div>
+                </div>
+                
+                <input type="text" class="form-input hidden" id="otherBusiness" placeholder="Especifica tu tipo de negocio...">
+                
+                <div class="form-group" style="margin-top: 2rem;">
+                    <label class="form-label">💰 ¿Qué paquete te interesa?</label>
+                    <div class="option-grid">
+                        <input type="radio" name="package" id="pkg-basico" value="Básico $160k" class="option-input">
+                        <label for="pkg-basico" class="option-label">🌱 Básico - $160.000</label>
+                        
+                        <input type="radio" name="package" id="pkg-profesional" value="Profesional $260k" class="option-input">
+                        <label for="pkg-profesional" class="option-label">🌿 Profesional - $260.000</label>
+                        
+                        <input type="radio" name="package" id="pkg-premium" value="Premium $360k" class="option-input">
+                        <label for="pkg-premium" class="option-label">🌺 Premium - $360.000</label>
+                        
+                        <input type="radio" name="package" id="pkg-unsure" value="No estoy seguro" class="option-input">
+                        <label for="pkg-unsure" class="option-label">🤔 No estoy seguro</label>
+                    </div>
+                </div>
+
+                <div class="form-buttons">
+                    <button class="btn-form btn-next" onclick="nextStep()" disabled="" id="step1Next">Continuar</button>
+                </div>
+            </div>
+
+            <!-- PASO 2 -->
+            <div class="form-step" id="step2">
+                <div class="form-group" id="goalQuestion">
+                    <label class="form-label">🎯 ¿Para qué necesitas la página web?</label>
+                    <div class="option-grid">
+                        <input type="radio" name="goal" id="goal1" value="Solo tener presencia en Internet" class="option-input">
+                        <label for="goal1" class="option-label">Solo tener presencia en Internet</label>
+                        
+                        <input type="radio" name="goal" id="goal2" value="Conseguir más clientes" class="option-input">
+                        <label for="goal2" class="option-label">Conseguir más clientes</label>
+                        
+                        <input type="radio" name="goal" id="goal3" value="Vender mis productos o servicios" class="option-input">
+                        <label for="goal3" class="option-label">Vender mis productos o servicios</label>
+                        
+                        <input type="radio" name="goal" id="goal4" value="Destacarme de la competencia" class="option-input">
+                        <label for="goal4" class="option-label">Destacarme de la competencia</label>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-top: 2rem;">
+                    <label class="form-label">🎨 ¿Ya tienes logo y colores de tu negocio?</label>
+                    <div class="option-grid">
+                        <input type="radio" name="identity" id="id-full" value="Sí, tengo todo (logo, colores, fotos)" class="option-input">
+                        <label for="id-full" class="option-label">✅ Sí, tengo todo</label>
+                        
+                        <input type="radio" name="identity" id="id-partial" value="Solo tengo el logo" class="option-input">
+                        <label for="id-partial" class="option-label">⚡ Solo tengo el logo</label>
+                        
+                        <input type="radio" name="identity" id="id-none" value="No tengo nada, ayúdame" class="option-input">
+                        <label for="id-none" class="option-label">❌ No tengo nada</label>
+                    </div>
+                </div>
+
+                <div class="form-buttons">
+                    <button class="btn-form btn-back" onclick="prevStep()">Atrás</button>
+                    <button class="btn-form btn-next" onclick="nextStep()" disabled="" id="step2Next">Continuar</button>
+                </div>
+            </div>
+
+            <!-- PASO 3 - NUEVO: Contenido y secciones -->
+            <div class="form-step" id="step3">
+                <div class="form-group">
+                    <label class="form-label">📝 ¿Qué partes quieres en tu página? (puedes elegir varias)</label>
+                    <div class="checkbox-grid">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="sec-menu" value="Menú/Catálogo de productos" class="checkbox-input">
+                            <label for="sec-menu" class="checkbox-label">🍽️ Menú / Productos</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="sec-gallery" value="Galería de fotos" class="checkbox-input">
+                            <label for="sec-gallery" class="checkbox-label">📸 Fotos de mi negocio</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="sec-testimonials" value="Testimonios de clientes" class="checkbox-input">
+                            <label for="sec-testimonials" class="checkbox-label">⭐ Opiniones de clientes</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="sec-about" value="Sobre nosotros / Historia" class="checkbox-input">
+                            <label for="sec-about" class="checkbox-label">ℹ️ Nuestra historia</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="sec-contact" value="Formulario de contacto" class="checkbox-input">
+                            <label for="sec-contact" class="checkbox-label">📧 Formulario para contacto</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="sec-location" value="Ubicación / Mapa" class="checkbox-input">
+                            <label for="sec-location" class="checkbox-label">📍 Dónde estamos</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-top: 2rem;">
+                    <label class="form-label">🎨 ¿Qué colores te gustan para tu página?</label>
+                    <input type="text" class="form-input" id="colors" placeholder="Ej: Azul y blanco, Rojo, Los colores de mi logo, etc.">
+                    <small style="color: var(--color-text-light); font-size: 0.9rem; display: block; margin-top: 0.5rem;">Esto me ayuda a hacer un diseño más personalizado</small>
+                </div>
+
+                <div class="form-buttons">
+                    <button class="btn-form btn-back" onclick="prevStep()">Atrás</button>
+                    <button class="btn-form btn-next" onclick="nextStep()">Continuar</button>
+                </div>
+            </div>
+
+            <!-- PASO 4 - Información del negocio -->
+            <div class="form-step" id="step4">
+                <div class="form-group">
+                    <label class="form-label">🏢 ¿Cómo se llama tu negocio?</label>
+                    <input type="text" class="form-input" id="businessName" placeholder="Ej: Restaurante El Sabor, Peluquería Moderna" required="">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">📄 Cuéntame en 1 o 2 frases sobre tu negocio</label>
+                    <textarea class="form-input" id="businessDescription" placeholder="Ej: Restaurante de comida colombiana con 15 años de experiencia. Hacemos la mejor bandeja paisa de la ciudad." rows="3" required=""></textarea>
+                    <small style="color: var(--color-text-light); font-size: 0.9rem; display: block; margin-top: 0.5rem;">Esto lo voy a usar en tu página de muestra</small>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">🌐 ¿Tienes alguna página que te guste como ejemplo? (opcional)</label>
+                    <input type="text" class="form-input" id="referenceUrl" placeholder="https://ejemplo.com (puedes dejarlo vacío)">
+                    <small style="color: var(--color-text-light); font-size: 0.9rem; display: block; margin-top: 0.5rem;">Me ayuda a entender qué estilo te gusta</small>
+                </div>
+
+                <div class="form-buttons">
+                    <button class="btn-form btn-back" onclick="prevStep()">Atrás</button>
+                    <button class="btn-form btn-next" onclick="nextStep()" disabled="" id="step4Next">Continuar</button>
+                </div>
+            </div>
+
+            <!-- PASO 5 - CONTACTO -->
+            <!-- PASO 5 - CONTACTO -->
+            <div class="form-step" id="step5">
+                <div class="form-group">
+                    <label class="form-label">📱 Tu número de WhatsApp</label>
+                    <input type="tel" class="form-input" id="whatsapp" placeholder="+57 300 123 4567" required="">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">👤 Tu nombre</label>
+                    <input type="text" class="form-input" id="name" placeholder="Tu nombre completo" required="">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">📧 Tu correo (opcional)</label>
+                    <input type="email" class="form-input" id="email" placeholder="tucorreo@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">📅 ¿Para cuándo necesitas tu página lista?</label>
+                    <div class="option-grid">
+                        <input type="radio" name="urgency" id="urgent" value="Lo más pronto posible" class="option-input">
+                        <label for="urgent" class="option-label">⚡ Lo más pronto posible</label>
+                        
+                        <input type="radio" name="urgency" id="normal" value="En 2-3 semanas está bien" class="option-input">
+                        <label for="normal" class="option-label">📅 En 2-3 semanas</label>
+                        
+                        <input type="radio" name="urgency" id="flexible" value="No tengo afán" class="option-input">
+                        <label for="flexible" class="option-label">🕐 No tengo afán</label>
+                    </div>
+                </div>
+
+                <div class="form-buttons">
+                    <button class="btn-form btn-back" onclick="prevStep()">Atrás</button>
+                    <button class="btn-form btn-next" onclick="submitForm()" disabled="" id="step5Next">Finalizar</button>
+                </div>
+            </div>
+
+            <!-- CONFIRMACIÓN -->
+            <div class="form-step" id="confirmation">
+                <div class="confirmation">
+                    <div class="confirmation-icon">✅</div>
+                    <h3>¡Perfecto <span id="confirmName"></span>!</h3>
+                    <div class="confirmation-message">
+                        <p><strong>Te contacto por WhatsApp en las próximas horas para:</strong></p>
+                        <p>✓ Mostrarte la MUESTRA GRATUITA de tu sitio<br>
+                        ✓ Explicarte el proceso del paquete <span id="confirmPackage"></span><br>
+                        ✓ Resolver dudas sobre dominio y publicación</p>
+                        <p style="margin-top: 1.5rem;"><strong>Mientras tanto, ¿tienes fotos de tu negocio?</strong><br>
+                        Puedes enviarlas al WhatsApp para adelantar trabajo 📸</p>
+                    </div>
+                    <button class="btn btn-primary" id="whatsappButton" onclick="sendToWhatsApp()">
+                        <span>💬 Enviar solicitud por WhatsApp</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CREDIBILIDAD -->
+    <section class="trust">
+        <div class="trust-grid">
+            <div class="trust-item">
+                <div class="trust-icon">🚀</div>
+                <div class="trust-title">15+ páginas entregadas</div>
+                <div class="trust-description">Negocios reales que ya están funcionando</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">🎁</div>
+                <div class="trust-title">Muestra gratis</div>
+                <div class="trust-description">Ves cómo queda antes de pagar</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">💬</div>
+                <div class="trust-title">Te ayudo con todo</div>
+                <div class="trust-description">Desde el inicio hasta que esté publicada</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">✨</div>
+                <div class="trust-title">Tu página será única</div>
+                <div class="trust-description">Nada de plantillas que todos tienen</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EASTER EGG -->
+    <section class="easter-egg" id="easterEgg">
+        <h3>👀 ¿Llegaste hasta aquí?</h3>
+        <p>Claramente te interesa el diseño web de verdad.</p>
+        <div class="bonus-box">
+            <h4 style="margin-bottom: 1rem;">🎁 BONUS EXCLUSIVO</h4>
+            <p>Si mencionas <strong>"Encontré el mensaje oculto"</strong> cuando me contactes, te regalo:</p>
+            <p>✓ Análisis gratuito de tu competencia online<br>
+            ✓ 3 sugerencias de componentes únicos para tu sector</p>
+            <button class="btn btn-primary" style="margin-top: 1rem;" onclick="scrollToSection('formulario')">
+                <span>Contactar ahora con el código</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- WHATSAPP FLOTANTE -->
+    <a href="https://wa.me/573154674742" class="whatsapp-float" target="_blank" title="Chatea por WhatsApp">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-5.245 1.408 1.408-5.245-0.292-0.507c-1.224-2.162-1.87-4.588-1.87-7.070 0-7.515 6.118-13.633 13.633-13.633s13.633 6.118 13.633 13.633-6.118 13.633-13.633 13.633zM21.933 18.667c-0.382-0.191-2.267-1.119-2.619-1.247s-0.607-0.191-0.863 0.191c-0.256 0.382-0.991 1.247-1.215 1.503s-0.447 0.287-0.829 0.096c-0.382-0.191-1.613-0.595-3.071-1.894-1.135-1.012-1.901-2.262-2.124-2.644s-0.024-0.589 0.168-0.779c0.172-0.171 0.382-0.446 0.573-0.669s0.256-0.382 0.382-0.638c0.127-0.256 0.064-0.478-0.032-0.669s-0.863-2.076-1.183-2.843c-0.311-0.747-0.627-0.646-0.863-0.658-0.223-0.012-0.478-0.015-0.733-0.015s-0.669 0.096-1.021 0.478c-0.351 0.382-1.343 1.311-1.343 3.197s1.375 3.707 1.567 3.963c0.191 0.256 2.704 4.13 6.553 5.791 0.915 0.395 1.629 0.631 2.186 0.808 0.919 0.292 1.755 0.251 2.414 0.152 0.737-0.11 2.267-0.927 2.587-1.822s0.32-1.663 0.224-1.822c-0.096-0.159-0.351-0.256-0.733-0.446z"></path>
+        </svg>
+    </a>
+
+    <!-- MODAL -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <div class="modal-body" id="modalBody">
+                <h2 style="font-family: var(--font-display); font-size: 2.5rem; margin-bottom: 1rem; color: var(--color-primary);">Hot Dog Express - Profesional</h2>
+                <p style="font-size: 1.2rem; color: var(--color-text-light); margin-bottom: 2rem;">Ejemplo de paquete Profesional - 5 secciones</p>
+                
+                <!-- BOTONES DE ACCIÓN ARRIBA -->
+                <div style="display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap;">
+                    
+                        <a href="https://webloom24.github.io/web-paquete-profesional/" target="_blank" class="btn btn-secondary" style="flex: 1; min-width: 200px; text-decoration: none; display: flex; align-items: center; justify-content: center; background: var(--color-secondary); color: white; border: none;">
+                            <span>🌐 Abrir sitio completo</span>
+                        </a>
+                    
+                    <button class="btn btn-primary" style="flex: 1; min-width: 200px; justify-content: center;" onclick="selectPackage('profesional')">
+                        <span>Quiero algo así para mi negocio</span>
+                    </button>
+                </div>
+                
+                
+                    <div style="margin-bottom: 2rem;">
+                        <iframe src="https://webloom24.github.io/web-paquete-profesional/" style="width: 100%; height: 500px; border: 3px solid var(--color-border); border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" title="Vista previa de Hot Dog Express - Profesional"></iframe>
+                        <p style="text-align: center; margin-top: 1rem; color: var(--color-text-light); font-size: 0.9rem;">
+                            ⬆️ Vista previa del sitio en vivo - Desplázate dentro del iframe para explorar
+                        </p>
+                    </div>
+                
+
+                <div class="modal-features">
+                    <h4>✨ Características incluidas en el paquete Profesional</h4>
+                    <ul>
+                        <li>5 secciones completas</li><li>Sobre Nosotros + Testimonios</li><li>Formulario funcional</li><li>Entrega en 7-10 días</li>
+                    </ul>
+                </div>
+
+                <div style="background: rgba(0, 217, 163, 0.1); padding: 1.5rem; border-radius: 12px; margin-top: 2rem;">
+                    <p style="font-size: 1.1rem; margin-bottom: 1rem;"><strong>💡 Resultado:</strong> Experiencia completa para atraer clientes</p>
+                    <p style="font-size: 0.9rem; color: var(--color-text-light);">*Proyecto de demostración para ilustrar capacidades del paquete</p>
+                </div>
+            </div>
+            <!-- Indicador de scroll -->
+            <div class="scroll-indicator hidden" id="scrollIndicator" onclick="scrollModalDown()">
+                <span>Baja para ver más</span>
+                <span class="scroll-arrow">👇</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // === DATOS DE PROYECTOS ===
+        const projects = [
+            // === PROYECTOS REALES ===
+            {
+                id: 1,
+                name: "Fundación VIDARELAX",
+                type: "premium",
+                category: "Salud",
+                description: "Fundación para pacientes oncológicos en Bucaramanga",
+                impact: "Sitio web premium en producción",
+                image: "https://i.imgur.com/Rt4LNWo.png",
+                features: ["Diseño premium completo", "Múltiples secciones", "Información detallada de la fundación", "Sección de contacto", "Optimización SEO", "Totalmente responsive"],
+                isReal: true,
+                liveUrl: "https://vidarelax.com.co"
+            },
+            {
+                id: 2,
+                name: "JuanDa Entrenador Personal",
+                type: "profesional",
+                category: "Fitness",
+                description: "Sitio web para entrenador personal profesional",
+                impact: "Captación de clientes efectiva",
+                image: "https://i.imgur.com/Z6rp2iZ.png",
+                features: ["Secciones de servicios", "Galería de transformaciones", "Formulario de contacto funcional", "Botón de WhatsApp", "Diseño responsive"],
+                isReal: true,
+                liveUrl: "https://juandaentrenador.github.io/entrenador-personal/"
+            },
+            {
+                id: 3,
+                name: "Granos Surcaribe",
+                type: "basico",
+                category: "Comercio",
+                description: "Empresa comercializadora de granos y productos agrícolas",
+                impact: "Presencia digital establecida",
+                image: "https://i.imgur.com/9KiHSYN.png",
+                features: ["Página de presentación", "Información de productos", "Datos de contacto", "Diseño limpio y profesional"],
+                isReal: true,
+                liveUrl: "https://granossurcaribe.com.co"
+            },
+            
+            // === EJEMPLOS DEMOSTRATIVOS (mismo negocio, diferentes paquetes) ===
+            {
+                id: 4,
+                name: "Hot Dog Express - Básico",
+                type: "basico",
+                category: "Restaurante",
+                description: "Ejemplo de paquete Básico - 3 secciones",
+                impact: "Presencia online rápida y efectiva",
+                image: "https://i.imgur.com/cdznSEP.png",
+                features: ["3 secciones principales", "Hero + Menú + Contacto", "Diseño responsive", "Entrega en 3-5 días"],
+                isReal: false,
+                liveUrl: "https://webloom24.github.io/web-paquete-basico/"
+            },
+            {
+                id: 5,
+                name: "Hot Dog Express - Profesional",
+                type: "profesional",
+                category: "Restaurante",
+                description: "Ejemplo de paquete Profesional - 5 secciones",
+                impact: "Experiencia completa para atraer clientes",
+                image: "https://i.imgur.com/jAJS7s2.png",
+                features: ["5 secciones completas", "Sobre Nosotros + Testimonios", "Formulario funcional", "Entrega en 7-10 días"],
+                isReal: false,
+                liveUrl: "https://webloom24.github.io/web-paquete-profesional/"
+            },
+            {
+                id: 6,
+                name: "Hot Dog Express - Premium",
+                type: "premium",
+                category: "Restaurante",
+                description: "Ejemplo de paquete Premium - 7 secciones",
+                impact: "Máxima presencia digital con SEO optimizado",
+                image: "https://i.imgur.com/jiT9Jya.png",
+                features: ["7 secciones avanzadas", "Blog + Ventajas + SEO", "Animaciones premium", "Entrega en 10-15 días"],
+                isReal: false,
+                liveUrl: "https://webloom24.github.io/web-paquete-premium/"
+            }
+        ];
+
+        // === RENDERIZAR PROYECTOS ===
+        function renderProjects(filter = 'todos') {
+            const grid = document.getElementById('projectsGrid');
+            const realGrid = document.getElementById('realProjectsGrid');
+            
+            grid.innerHTML = '';
+            realGrid.innerHTML = '';
+
+            projects.forEach(project => {
+                const card = document.createElement('div');
+                card.className = 'project-card';
+                card.setAttribute('data-type', project.type);
+                card.onclick = () => openProjectModal(project);
+
+                const badge = project.isReal 
+                    ? `<div class="project-badge ${project.type}" style="background: white; color: var(--color-primary); border: 2px solid var(--color-accent);">
+                        ✓ EN VIVO - ${project.type === 'basico' ? '🌱 Básico' : project.type === 'profesional' ? '🌿 Profesional' : '🌺 Premium'}
+                       </div>`
+                    : `<div class="project-badge ${project.type}">
+                        ${project.type === 'basico' ? '🌱 Básico' : project.type === 'profesional' ? '🌿 Profesional' : '🌺 Premium'}
+                       </div>`;
+                
+                const packageLabel = project.type === 'basico' ? 'BÁSICO' : 
+                                    project.type === 'profesional' ? 'PROFESIONAL' : 'PREMIUM';
+
+                card.innerHTML = `
+                    <div class="project-image" style="background-image: url('${project.image}');">
+                        ${badge}
+                        <div class="project-image-text">${project.name.split(' - ')[0]}</div>
+                        ${!project.isReal ? `<div class="project-image-subtitle">${packageLabel}</div>` : ''}
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">${project.name}</h3>
+                        <p class="project-description">${project.description}</p>
+                        <div class="project-impact">
+                            ${project.isReal ? '🌐' : '⚡'} ${project.impact}
+                        </div>
+                    </div>
+                `;
+
+                // Separar proyectos reales de demostrativos
+                if (project.isReal) {
+                    realGrid.appendChild(card);
+                } else {
+                    // Solo mostrar en el grid de demostrativos si coincide con el filtro
+                    if (filter === 'todos' || project.type === filter) {
+                        grid.appendChild(card);
+                    }
+                }
+            });
+        }
+
+        // === FILTROS ===
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                const filter = this.getAttribute('data-filter');
+                renderProjects(filter);
+            });
+        });
+
+        function filterByPackage(packageType) {
+            scrollToSection('portfolio');
+            setTimeout(() => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                document.querySelector(`[data-filter="${packageType}"]`).classList.add('active');
+                renderProjects(packageType);
+            }, 500);
+        }
+
+        // === MODAL ===
+        function openProjectModal(project) {
+            const modal = document.getElementById('projectModal');
+            const modalBody = document.getElementById('modalBody');
+            const scrollIndicator = document.getElementById('scrollIndicator');
+
+            // Crear contenido del iframe si es proyecto real con URL
+            let previewContent = '';
+            if (project.liveUrl) {
+                previewContent = `
+                    <div style="margin-bottom: 2rem;">
+                        <iframe 
+                            src="${project.liveUrl}" 
+                            style="width: 100%; height: 500px; border: 3px solid var(--color-border); border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);"
+                            title="Vista previa de ${project.name}"
+                        ></iframe>
+                        <p style="text-align: center; margin-top: 1rem; color: var(--color-text-light); font-size: 0.9rem;">
+                            ⬆️ Vista previa del sitio en vivo - Desplázate dentro del iframe para explorar
+                        </p>
+                    </div>
+                `;
+            } else {
+                previewContent = `
+                    <div class="modal-images">
+                        <img src="${project.image}" alt="${project.name}" class="modal-image">
+                    </div>
+                `;
+            }
+
+            modalBody.innerHTML = `
+                <h2 style="font-family: var(--font-display); font-size: 2.5rem; margin-bottom: 1rem; color: var(--color-primary);">${project.name}</h2>
+                <p style="font-size: 1.2rem; color: var(--color-text-light); margin-bottom: 2rem;">${project.description}</p>
+                
+                <!-- BOTONES DE ACCIÓN ARRIBA -->
+                <div style="display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap;">
+                    ${project.liveUrl ? `
+                        <a href="${project.liveUrl}" target="_blank" class="btn btn-secondary" style="flex: 1; min-width: 200px; text-decoration: none; display: flex; align-items: center; justify-content: center; background: var(--color-secondary); color: white; border: none;">
+                            <span>🌐 Abrir sitio completo</span>
+                        </a>
+                    ` : ''}
+                    <button class="btn btn-primary" style="flex: 1; min-width: 200px; justify-content: center;" onclick="selectPackage('${project.type}')">
+                        <span>Quiero algo así para mi negocio</span>
+                    </button>
+                </div>
+                
+                ${previewContent}
+
+                <div class="modal-features">
+                    <h4>✨ Características incluidas en el paquete ${project.type === 'basico' ? 'Básico' : project.type === 'profesional' ? 'Profesional' : 'Premium'}</h4>
+                    <ul>
+                        ${project.features.map(feature => `<li>${feature}</li>`).join('')}
+                    </ul>
+                </div>
+
+                <div style="background: rgba(0, 217, 163, 0.1); padding: 1.5rem; border-radius: 12px; margin-top: 2rem;">
+                    <p style="font-size: 1.1rem; margin-bottom: 1rem;"><strong>💡 Resultado:</strong> ${project.impact}</p>
+                    ${!project.isReal ? '<p style="font-size: 0.9rem; color: var(--color-text-light);">*Proyecto de demostración para ilustrar capacidades del paquete</p>' : '<p style="font-size: 0.9rem; color: var(--color-accent-dark); font-weight: 600;">✓ Proyecto real en producción</p>'}
+                </div>
+            `;
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Mostrar indicador de scroll
+            scrollIndicator.classList.remove('hidden');
+            
+            // Detectar scroll para ocultar indicador
+            const modalContent = modal.querySelector('.modal-content');
+            modalContent.addEventListener('scroll', function() {
+                if (modalContent.scrollTop > 100) {
+                    scrollIndicator.classList.add('hidden');
+                } else {
+                    scrollIndicator.classList.remove('hidden');
+                }
+            });
+        }
+
+        function closeModal() {
+            document.getElementById('projectModal').classList.remove('active');
+            document.getElementById('scrollIndicator').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Función para hacer scroll en el modal
+        function scrollModalDown() {
+            const modalContent = document.querySelector('.modal-content');
+            modalContent.scrollTo({
+                top: modalContent.scrollTop + 300,
+                behavior: 'smooth'
+            });
+        }
+
+        // === FORMULARIO INTELIGENTE ===
+        let currentStep = 1;
+        const formData = {};
+
+        function selectPackage(packageType) {
+            closeModal();
+            scrollToSection('formulario');
+            setTimeout(() => {
+                const packageMap = {
+                    'basico': 'pkg-basico',
+                    'profesional': 'pkg-profesional',
+                    'premium': 'pkg-premium'
+                };
+                const packageInput = document.getElementById(packageMap[packageType]);
+                if (packageInput) {
+                    packageInput.checked = true;
+                    validateStep1();
+                }
+            }, 500);
+        }
+
+        // Validación paso 1
+        document.querySelectorAll('input[name="business-type"]').forEach(input => {
+            input.addEventListener('change', function() {
+                const otherInput = document.getElementById('otherBusiness');
+                if (this.value === 'Otro') {
+                    otherInput.classList.remove('hidden');
+                } else {
+                    otherInput.classList.add('hidden');
+                }
+                validateStep1();
+            });
+        });
+
+        document.querySelectorAll('input[name="package"]').forEach(input => {
+            input.addEventListener('change', validateStep1);
+        });
+
+        function validateStep1() {
+            const businessType = document.querySelector('input[name="business-type"]:checked');
+            const packageType = document.querySelector('input[name="package"]:checked');
+            const nextBtn = document.getElementById('step1Next');
+            
+            if (businessType && packageType) {
+                nextBtn.disabled = false;
+                if (businessType.value === 'Otro') {
+                    const otherInput = document.getElementById('otherBusiness');
+                    nextBtn.disabled = !otherInput.value.trim();
+                }
+            } else {
+                nextBtn.disabled = true;
+            }
+        }
+
+        // Validación paso 2
+        document.querySelectorAll('input[name="goal"]').forEach(input => {
+            input.addEventListener('change', validateStep2);
+        });
+
+        document.querySelectorAll('input[name="identity"]').forEach(input => {
+            input.addEventListener('change', validateStep2);
+        });
+
+        function validateStep2() {
+            const goal = document.querySelector('input[name="goal"]:checked');
+            const identity = document.querySelector('input[name="identity"]:checked');
+            const nextBtn = document.getElementById('step2Next');
+            nextBtn.disabled = !(goal && identity);
+        }
+
+        // Validación paso 4 (información del negocio)
+        ['businessName', 'businessDescription'].forEach(id => {
+            document.getElementById(id).addEventListener('input', validateStep4);
+        });
+
+        function validateStep4() {
+            const businessName = document.getElementById('businessName').value.trim();
+            const businessDescription = document.getElementById('businessDescription').value.trim();
+            const nextBtn = document.getElementById('step4Next');
+            nextBtn.disabled = !(businessName && businessDescription);
+        }
+
+        // Validación paso 5 (contacto - era paso 3)
+        ['whatsapp', 'name'].forEach(id => {
+            document.getElementById(id).addEventListener('input', validateStep5);
+        });
+
+        document.querySelectorAll('input[name="urgency"]').forEach(input => {
+            input.addEventListener('change', validateStep5);
+        });
+
+        function validateStep5() {
+            const whatsapp = document.getElementById('whatsapp').value.trim();
+            const name = document.getElementById('name').value.trim();
+            const urgency = document.querySelector('input[name="urgency"]:checked');
+            const nextBtn = document.getElementById('step5Next');
+            nextBtn.disabled = !(whatsapp && name && urgency);
+        }
+
+        function nextStep() {
+            // Guardar datos del paso actual
+            if (currentStep === 1) {
+                formData.businessType = document.querySelector('input[name="business-type"]:checked').value;
+                if (formData.businessType === 'Otro') {
+                    formData.businessType = document.getElementById('otherBusiness').value;
+                }
+                formData.package = document.querySelector('input[name="package"]:checked').value;
+            } else if (currentStep === 2) {
+                formData.goal = document.querySelector('input[name="goal"]:checked').value;
+                formData.identity = document.querySelector('input[name="identity"]:checked').value;
+            } else if (currentStep === 3) {
+                // Capturar secciones seleccionadas (checkboxes)
+                const selectedSections = [];
+                document.querySelectorAll('.checkbox-input:checked').forEach(checkbox => {
+                    selectedSections.push(checkbox.value);
+                });
+                formData.sections = selectedSections.length > 0 ? selectedSections.join(', ') : 'No especificadas';
+                formData.colors = document.getElementById('colors').value.trim() || 'No especificado';
+            } else if (currentStep === 4) {
+                formData.businessName = document.getElementById('businessName').value.trim();
+                formData.businessDescription = document.getElementById('businessDescription').value.trim();
+                formData.referenceUrl = document.getElementById('referenceUrl').value.trim() || 'Ninguna';
+            }
+
+            // Ocultar paso actual
+            document.getElementById(`step${currentStep}`).classList.remove('active');
+            document.querySelector(`.progress-step:nth-child(${currentStep + 1})`).classList.remove('active');
+            document.querySelector(`.progress-step:nth-child(${currentStep + 1})`).classList.add('completed');
+
+            // Mostrar siguiente paso
+            currentStep++;
+            document.getElementById(`step${currentStep}`).classList.add('active');
+            document.querySelector(`.progress-step:nth-child(${currentStep + 1})`).classList.add('active');
+
+            // Actualizar barra de progreso (ahora son 5 pasos, no 4)
+            const progressLine = document.getElementById('progressLine');
+            progressLine.style.width = `${((currentStep - 1) / 4) * 100}%`;
+
+            // Scroll al formulario
+            document.querySelector('.form-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function prevStep() {
+            document.getElementById(`step${currentStep}`).classList.remove('active');
+            document.querySelector(`.progress-step:nth-child(${currentStep + 1})`).classList.remove('active');
+
+            currentStep--;
+            document.getElementById(`step${currentStep}`).classList.add('active');
+            document.querySelector(`.progress-step:nth-child(${currentStep + 1})`).classList.add('active');
+            document.querySelector(`.progress-step:nth-child(${currentStep + 2})`).classList.remove('completed');
+
+            const progressLine = document.getElementById('progressLine');
+            progressLine.style.width = `${((currentStep - 1) / 3) * 100}%`;
+        }
+
+        function submitForm() {
+            formData.whatsapp = document.getElementById('whatsapp').value;
+            formData.name = document.getElementById('name').value;
+            formData.email = document.getElementById('email').value;
+            formData.urgency = document.querySelector('input[name="urgency"]:checked').value;
+
+            // LocalStorage para persistencia
+            localStorage.setItem('webloomFormData', JSON.stringify(formData));
+            
+            // Redirigir directamente a WhatsApp con toda la información
+            sendToWhatsApp();
+        }
+
+        // === ENVIAR A WHATSAPP ===
+        function sendToWhatsApp() {
+            // Construir mensaje completo con toda la información
+            const message = `🌐 *NUEVA SOLICITUD DE SITIO WEB - WEBLOOM*
+
+═══════════════════════════
+📋 *DATOS DEL CLIENTE*
+═══════════════════════════
+👤 Nombre: ${formData.name}
+📱 WhatsApp: ${formData.whatsapp}
+${formData.email ? `📧 Email: ${formData.email}` : ''}
+
+═══════════════════════════
+🏢 *INFORMACIÓN DEL NEGOCIO*
+═══════════════════════════
+📌 Nombre del negocio: ${formData.businessName}
+📝 Descripción: ${formData.businessDescription}
+🏷️ Tipo: ${formData.businessType}
+${formData.referenceUrl !== 'Ninguna' ? `🌐 Referencia/Sitio actual: ${formData.referenceUrl}` : ''}
+
+═══════════════════════════
+💰 *PAQUETE Y OBJETIVO*
+═══════════════════════════
+📦 Paquete seleccionado: ${formData.package}
+🎯 Objetivo principal: ${formData.goal}
+
+═══════════════════════════
+🎨 *DISEÑO Y CONTENIDO*
+═══════════════════════════
+🖼️ Identidad visual: ${formData.identity}
+🎨 Preferencia de colores: ${formData.colors}
+
+📑 Secciones importantes:
+${formData.sections}
+
+═══════════════════════════
+📅 *TIEMPO Y URGENCIA*
+═══════════════════════════
+⏰ Necesita el sitio: ${formData.urgency}
+
+═══════════════════════════
+✅ *SIGUIENTE PASO*
+═══════════════════════════
+🎁 Crear MUESTRA GRATUITA personalizada
+📞 Agendar llamada para explicar proceso
+💡 Revisar ejemplos del paquete seleccionado
+
+---
+🚀 Formulario completado desde webloom.com`;
+
+            // Codificar el mensaje para URL
+            const encodedMessage = encodeURIComponent(message);
+            
+            // Abrir WhatsApp con el mensaje
+            window.open(`https://wa.me/573154674742?text=${encodedMessage}`, '_blank');
+        }
+
+        // === SCROLL SUAVE ===
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // === EASTER EGG ===
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        observer.observe(document.getElementById('easterEgg'));
+
+        // === INICIALIZACIÓN ===
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProjects();
+
+            // Cargar datos guardados si existen
+            const savedData = localStorage.getItem('webloomFormData');
+            if (savedData) {
+                const data = JSON.parse(savedData);
+                // Podrías pre-llenar el formulario aquí si lo deseas
+            }
+        });
+
+        // Cerrar modal al hacer clic fuera
+        document.getElementById('projectModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Validación del input "Otro"
+        document.getElementById('otherBusiness').addEventListener('input', validateStep1);
+    </script>
+
+
+            <script>// Write JavaScript here</script>
+        
+    
+</body>
