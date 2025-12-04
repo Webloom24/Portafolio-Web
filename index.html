@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webloom - Sitios Web Que Convierten Visitantes en Clientes</title>
+    <title>Webloom - Sitios Web Profesionales para Tu Negocio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -209,13 +209,12 @@
             z-index: 1;
         }
         
-        /* === SECCIÓN PORTFOLIO === */
-        .portfolio {
+        /* === COMPARADOR DE PAQUETES === */
+        .packages {
             padding: var(--spacing-xl) var(--spacing-md);
-            max-width: 1400px;
-            margin: 0 auto;
+            background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-white) 100%);
         }
-        
+
         .section-header {
             text-align: center;
             margin-bottom: var(--spacing-lg);
@@ -233,6 +232,143 @@
             font-size: 1.2rem;
             color: var(--color-text-light);
             max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .package-card {
+            background: var(--color-white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+            transition: all var(--transition-smooth);
+            position: relative;
+            border: 3px solid transparent;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+        
+        .package-card.featured {
+            border-color: var(--color-accent);
+            transform: scale(1.05);
+        }
+        
+        .package-popular {
+            position: absolute;
+            top: -12px;
+            right: 2rem;
+            padding: 0.4rem 1.2rem;
+            background: var(--color-accent);
+            color: var(--color-primary);
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            font-weight: 700;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .package-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .package-name {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .package-price {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+        }
+        
+        .package-description {
+            color: var(--color-text-light);
+            margin-bottom: 1.5rem;
+            min-height: 60px;
+        }
+        
+        .package-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .package-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--color-border);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+        }
+        
+        .package-features li::before {
+            content: '✓';
+            color: var(--color-accent);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        .package-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .btn-package {
+            padding: 0.9rem 1.5rem;
+            font-family: var(--font-display);
+            font-weight: 600;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition-base);
+            text-align: center;
+            font-size: 0.95rem;
+        }
+        
+        .btn-select {
+            background: var(--color-accent);
+            color: var(--color-primary);
+        }
+        
+        .btn-select:hover {
+            background: var(--color-accent-dark);
+            transform: translateY(-2px);
+        }
+        
+        .btn-example {
+            background: transparent;
+            color: var(--color-primary);
+            border: 2px solid var(--color-border);
+        }
+        
+        .btn-example:hover {
+            background: var(--color-bg);
+            border-color: var(--color-accent);
+        }
+        
+        /* === SECCIÓN PORTFOLIO === */
+        .portfolio {
+            padding: var(--spacing-xl) var(--spacing-md);
+            max-width: 1400px;
             margin: 0 auto;
         }
         
@@ -375,6 +511,7 @@
             font-size: 0.85rem;
             font-weight: 600;
             color: var(--color-primary);
+            z-index: 3;
         }
         
         .project-badge.basico { color: #10b981; }
@@ -429,423 +566,7 @@
             transform: scale(1.05);
             box-shadow: 0 6px 20px rgba(0, 217, 163, 0.35);
         }
-        
-        /* === COMPARADOR DE PAQUETES === */
-        .packages {
-            padding: var(--spacing-xl) var(--spacing-md);
-            background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-white) 100%);
-        }
-        
-        .packages-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .package-card {
-            background: var(--color-white);
-            border-radius: 20px;
-            padding: 2.5rem;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
-            transition: all var(--transition-smooth);
-            position: relative;
-            border: 3px solid transparent;
-        }
-        
-        .package-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-        }
-        
-        .package-card.featured {
-            border-color: var(--color-accent);
-            transform: scale(1.05);
-        }
-        
-        .package-popular {
-            position: absolute;
-            top: -12px;
-            right: 2rem;
-            padding: 0.4rem 1.2rem;
-            background: var(--color-accent);
-            color: var(--color-primary);
-            font-family: var(--font-display);
-            font-size: 0.85rem;
-            font-weight: 700;
-            border-radius: 50px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .package-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .package-name {
-            font-family: var(--font-display);
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--color-primary);
-            margin-bottom: 0.5rem;
-        }
-        
-        .package-price {
-            font-family: var(--font-display);
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--color-accent);
-            margin-bottom: 1rem;
-        }
-        
-        .package-description {
-            color: var(--color-text-light);
-            margin-bottom: 1.5rem;
-            min-height: 60px;
-        }
-        
-        .package-features {
-            list-style: none;
-            margin-bottom: 2rem;
-        }
-        
-        .package-features li {
-            padding: 0.75rem 0;
-            border-bottom: 1px solid var(--color-border);
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 0.95rem;
-        }
-        
-        .package-features li::before {
-            content: '✓';
-            color: var(--color-accent);
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-        
-        .package-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-        
-        .btn-package {
-            padding: 0.9rem 1.5rem;
-            font-family: var(--font-display);
-            font-weight: 600;
-            border-radius: 10px;
-            border: none;
-            cursor: pointer;
-            transition: all var(--transition-base);
-            text-align: center;
-            font-size: 0.95rem;
-        }
-        
-        .btn-select {
-            background: var(--color-accent);
-            color: var(--color-primary);
-        }
-        
-        .btn-select:hover {
-            background: var(--color-accent-dark);
-            transform: translateY(-2px);
-        }
-        
-        .btn-example {
-            background: transparent;
-            color: var(--color-primary);
-            border: 2px solid var(--color-border);
-        }
-        
-        .btn-example:hover {
-            background: var(--color-bg);
-            border-color: var(--color-accent);
-        }
-        
-        /* === FORMULARIO INTELIGENTE === */
-        .smart-form {
-            padding: var(--spacing-xl) var(--spacing-md);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .form-container {
-            background: var(--color-white);
-            border-radius: 20px;
-            padding: 3rem;
-            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.1);
-        }
-        
-        .form-step {
-            display: none;
-            animation: fadeIn 0.5s ease-in;
-        }
-        
-        .form-step.active {
-            display: block;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateX(20px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        
-        .form-progress {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 2rem;
-            position: relative;
-        }
-        
-        .form-progress::before {
-            content: '';
-            position: absolute;
-            top: 12px;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--color-border);
-            z-index: 0;
-        }
-        
-        .progress-line {
-            position: absolute;
-            top: 12px;
-            left: 0;
-            height: 3px;
-            background: var(--color-accent);
-            transition: width 0.5s var(--transition-smooth);
-            z-index: 1;
-        }
-        
-        .progress-step {
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            background: var(--color-border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: var(--font-display);
-            font-weight: 700;
-            font-size: 0.9rem;
-            color: var(--color-text-light);
-            position: relative;
-            z-index: 2;
-            transition: all var(--transition-base);
-        }
-        
-        .progress-step.active,
-        .progress-step.completed {
-            background: var(--color-accent);
-            color: var(--color-primary);
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-label {
-            display: block;
-            font-family: var(--font-display);
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--color-primary);
-            margin-bottom: 1rem;
-        }
-        
-        .option-grid {
-            display: grid;
-            gap: 0.75rem;
-        }
-        
-        .option-label {
-            display: flex;
-            align-items: center;
-            padding: 1rem 1.5rem;
-            background: var(--color-bg);
-            border: 2px solid var(--color-border);
-            border-radius: 12px;
-            cursor: pointer;
-            transition: all var(--transition-base);
-            font-size: 0.95rem;
-        }
-        
-        .option-label:hover {
-            background: var(--color-white);
-            border-color: var(--color-accent);
-        }
-        
-        .option-input {
-            display: none;
-        }
-        
-        .option-input:checked + .option-label {
-            background: var(--color-white);
-            border-color: var(--color-accent);
-            box-shadow: 0 4px 15px rgba(0, 217, 163, 0.2);
-        }
-        
-        /* === CHECKBOX GRID === */
-        .checkbox-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 0.75rem;
-        }
-        
-        .checkbox-item {
-            position: relative;
-        }
-        
-        .checkbox-input {
-            display: none;
-        }
-        
-        .checkbox-label {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 1.5rem;
-            background: var(--color-bg);
-            border: 2px solid var(--color-border);
-            border-radius: 12px;
-            cursor: pointer;
-            transition: all var(--transition-base);
-            font-size: 0.95rem;
-        }
-        
-        .checkbox-label::before {
-            content: '';
-            width: 20px;
-            height: 20px;
-            border: 2px solid var(--color-border);
-            border-radius: 4px;
-            transition: all var(--transition-base);
-        }
-        
-        .checkbox-label:hover {
-            background: var(--color-white);
-            border-color: var(--color-accent);
-        }
-        
-        .checkbox-input:checked + .checkbox-label {
-            background: var(--color-white);
-            border-color: var(--color-accent);
-            box-shadow: 0 4px 15px rgba(0, 217, 163, 0.2);
-        }
-        
-        .checkbox-input:checked + .checkbox-label::before {
-            background: var(--color-accent);
-            border-color: var(--color-accent);
-            content: '✓';
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 0.75rem;
-            font-weight: bold;
-        }
-        
-        textarea.form-input {
-            resize: vertical;
-            min-height: 100px;
-            font-family: var(--font-body);
-        }
-        
-        .form-input {
-            width: 100%;
-            padding: 1rem 1.5rem;
-            font-family: var(--font-body);
-            font-size: 1rem;
-            border: 2px solid var(--color-border);
-            border-radius: 12px;
-            transition: all var(--transition-base);
-        }
-        
-        .form-input:focus {
-            outline: none;
-            border-color: var(--color-accent);
-            box-shadow: 0 4px 15px rgba(0, 217, 163, 0.1);
-        }
-        
-        .form-buttons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-        
-        .btn-form {
-            flex: 1;
-            padding: 1rem;
-            font-family: var(--font-display);
-            font-weight: 600;
-            font-size: 1rem;
-            border-radius: 12px;
-            border: none;
-            cursor: pointer;
-            transition: all var(--transition-base);
-        }
-        
-        .btn-next {
-            background: var(--color-accent);
-            color: var(--color-primary);
-        }
-        
-        .btn-next:hover:not(:disabled) {
-            background: var(--color-accent-dark);
-            transform: translateY(-2px);
-        }
-        
-        .btn-next:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-        
-        .btn-back {
-            background: var(--color-bg);
-            color: var(--color-primary);
-        }
-        
-        .btn-back:hover {
-            background: var(--color-border);
-        }
-        
-        /* === CONFIRMACIÓN === */
-        .confirmation {
-            text-align: center;
-            padding: 2rem;
-        }
-        
-        .confirmation-icon {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            animation: scaleIn 0.5s var(--transition-smooth);
-        }
-        
-        @keyframes scaleIn {
-            from { transform: scale(0); }
-            to { transform: scale(1); }
-        }
-        
-        .confirmation h3 {
-            font-family: var(--font-display);
-            font-size: 2rem;
-            color: var(--color-primary);
-            margin-bottom: 1rem;
-        }
-        
-        .confirmation-message {
-            background: var(--color-bg);
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin: 1.5rem 0;
-            line-height: 1.8;
-        }
-        
+
         /* === CREDIBILIDAD === */
         .trust {
             padding: var(--spacing-lg) var(--spacing-md);
@@ -918,45 +639,6 @@
             fill: white;
         }
         
-        /* === EASTER EGG === */
-        .easter-egg {
-            padding: var(--spacing-xl) var(--spacing-md);
-            background: linear-gradient(135deg, var(--color-secondary) 0%, #a29bfe 100%);
-            text-align: center;
-            color: var(--color-white);
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 1s var(--transition-smooth);
-        }
-        
-        .easter-egg.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .easter-egg h3 {
-            font-family: var(--font-display);
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-        
-        .easter-egg p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .bonus-box {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 2rem;
-            max-width: 600px;
-            margin: 2rem auto;
-        }
-        
         /* === MODAL === */
         .modal {
             display: none;
@@ -975,6 +657,11 @@
         .modal.active {
             display: flex;
             animation: fadeIn 0.3s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         
         .modal-content {
@@ -1216,65 +903,6 @@
                 width: 100%;
             }
             
-            /* Form */
-            .smart-form {
-                padding: 3rem 1rem;
-            }
-            
-            .form-container {
-                padding: 1.5rem 1rem;
-                margin: 0;
-            }
-            
-            .form-progress {
-                gap: 0.5rem;
-                margin-bottom: 2rem;
-            }
-            
-            .progress-step {
-                width: 35px;
-                height: 35px;
-                font-size: 0.9rem;
-            }
-            
-            .form-label {
-                font-size: 1rem;
-            }
-            
-            .option-grid {
-                gap: 0.5rem;
-            }
-            
-            .option-label {
-                padding: 0.85rem 1rem;
-                font-size: 0.9rem;
-            }
-            
-            .checkbox-grid {
-                grid-template-columns: 1fr;
-                gap: 0.5rem;
-            }
-            
-            .checkbox-label {
-                padding: 0.85rem 1rem;
-                font-size: 0.9rem;
-            }
-            
-            .form-input,
-            textarea.form-input {
-                padding: 0.85rem 1rem;
-                font-size: 0.95rem;
-            }
-            
-            .form-buttons {
-                flex-direction: column;
-                gap: 0.75rem;
-            }
-            
-            .btn-form {
-                width: 100%;
-            }
-            
             /* WhatsApp button */
             .whatsapp-float {
                 bottom: 1.5rem;
@@ -1333,15 +961,6 @@
                 grid-template-columns: 1fr;
                 gap: 1rem;
             }
-            
-            /* Confirmation */
-            .confirmation h3 {
-                font-size: 1.5rem;
-            }
-            
-            .confirmation-message {
-                font-size: 0.95rem;
-            }
         }
         
         /* Extra small devices */
@@ -1356,12 +975,6 @@
             
             .filter-tabs {
                 grid-template-columns: 1fr;
-            }
-            
-            .progress-step {
-                width: 30px;
-                height: 30px;
-                font-size: 0.8rem;
             }
         }
         
@@ -1383,11 +996,11 @@
             <h1>Tu negocio en Internet, <span class="highlight">funcionando 24/7</span></h1>
             <p>Creo páginas web profesionales para negocios. Con tu web, tus clientes te pueden encontrar en Google y contactarte cuando quieran.</p>
             <div class="hero-buttons">
-                <button class="btn btn-primary" onclick="scrollToSection('portfolio')">
-                    <span>📱 Ver páginas que he hecho</span>
+                <button class="btn btn-primary" onclick="scrollToSection('paquetes')">
+                    <span>💰 Ver paquetes y precios</span>
                 </button>
-                <button class="btn btn-secondary" onclick="scrollToSection('formulario')">
-                    <span>⚡ Quiero mi página web</span>
+                <button class="btn btn-secondary" onclick="scrollToSection('portfolio')">
+                    <span>📱 Ver ejemplos de páginas</span>
                 </button>
             </div>
         </div>
@@ -1415,7 +1028,7 @@
                 </ul>
                 <div class="package-buttons">
                     <button class="btn-package btn-example" onclick="filterByPackage('basico')">Ver ejemplos</button>
-                    <button class="btn-package btn-select" onclick="selectPackage('basico')">Elegir este plan</button>
+                    <button class="btn-package btn-select" onclick="contactWhatsApp('basico')">Elegir este plan</button>
                 </div>
             </div>
 
@@ -1435,7 +1048,7 @@
                 </ul>
                 <div class="package-buttons">
                     <button class="btn-package btn-example" onclick="filterByPackage('profesional')">Ver ejemplos</button>
-                    <button class="btn-package btn-select" onclick="selectPackage('profesional')">Elegir este plan</button>
+                    <button class="btn-package btn-select" onclick="contactWhatsApp('profesional')">Elegir este plan</button>
                 </div>
             </div>
 
@@ -1455,7 +1068,7 @@
                 </ul>
                 <div class="package-buttons">
                     <button class="btn-package btn-example" onclick="filterByPackage('premium')">Ver ejemplos</button>
-                    <button class="btn-package btn-select" onclick="selectPackage('premium')">Elegir este plan</button>
+                    <button class="btn-package btn-select" onclick="contactWhatsApp('premium')">Elegir este plan</button>
                 </div>
             </div>
         </div>
@@ -1516,237 +1129,6 @@
                 <!-- Los proyectos reales se cargarán aquí -->
             </div>
         </div>
-        </div>
-    </section>
-
-    <!-- FORMULARIO INTELIGENTE -->
-    <section class="smart-form" id="formulario">
-        <div class="section-header">
-            <h2>Cuéntame sobre tu negocio</h2>
-            <p>Responde estas preguntas para darte la mejor propuesta y crear tu muestra gratis</p>
-        </div>
-
-        <div class="form-container">
-            <div class="form-progress">
-                <div class="progress-line" id="progressLine"></div>
-                <div class="progress-step active">1</div>
-                <div class="progress-step">2</div>
-                <div class="progress-step">3</div>
-                <div class="progress-step">4</div>
-                <div class="progress-step">5</div>
-            </div>
-
-            <!-- PASO 1 -->
-            <div class="form-step active" id="step1">
-                <div class="form-group">
-                    <label class="form-label">📝 ¿Qué tipo de negocio tienes?</label>
-                    <div class="option-grid">
-                        <input type="radio" name="business-type" id="restaurant" value="Restaurante/Café" class="option-input">
-                        <label for="restaurant" class="option-label">🍽️ Restaurante / Café</label>
-                        
-                        <input type="radio" name="business-type" id="store" value="Tienda/Comercio" class="option-input">
-                        <label for="store" class="option-label">🛍️ Tienda / Comercio</label>
-                        
-                        <input type="radio" name="business-type" id="services" value="Servicios profesionales" class="option-input">
-                        <label for="services" class="option-label">💼 Servicios profesionales</label>
-                        
-                        <input type="radio" name="business-type" id="health" value="Salud/Bienestar" class="option-input">
-                        <label for="health" class="option-label">⚕️ Salud / Bienestar</label>
-                        
-                        <input type="radio" name="business-type" id="other" value="Otro" class="option-input">
-                        <label for="other" class="option-label">🏢 Otro</label>
-                    </div>
-                </div>
-                
-                <input type="text" class="form-input hidden" id="otherBusiness" placeholder="Especifica tu tipo de negocio...">
-                
-                <div class="form-group" style="margin-top: 2rem;">
-                    <label class="form-label">💰 ¿Qué paquete te interesa?</label>
-                    <div class="option-grid">
-                        <input type="radio" name="package" id="pkg-basico" value="Básico $160k" class="option-input">
-                        <label for="pkg-basico" class="option-label">🌱 Básico - $160.000</label>
-                        
-                        <input type="radio" name="package" id="pkg-profesional" value="Profesional $260k" class="option-input">
-                        <label for="pkg-profesional" class="option-label">🌿 Profesional - $260.000</label>
-                        
-                        <input type="radio" name="package" id="pkg-premium" value="Premium $360k" class="option-input">
-                        <label for="pkg-premium" class="option-label">🌺 Premium - $360.000</label>
-                        
-                        <input type="radio" name="package" id="pkg-unsure" value="No estoy seguro" class="option-input">
-                        <label for="pkg-unsure" class="option-label">🤔 No estoy seguro</label>
-                    </div>
-                </div>
-
-                <div class="form-buttons">
-                    <button class="btn-form btn-next" onclick="nextStep()" disabled id="step1Next">Continuar</button>
-                </div>
-            </div>
-
-            <!-- PASO 2 -->
-            <div class="form-step" id="step2">
-                <div class="form-group" id="goalQuestion">
-                    <label class="form-label">🎯 ¿Para qué necesitas la página web?</label>
-                    <div class="option-grid">
-                        <input type="radio" name="goal" id="goal1" value="Solo tener presencia en Internet" class="option-input">
-                        <label for="goal1" class="option-label">Solo tener presencia en Internet</label>
-                        
-                        <input type="radio" name="goal" id="goal2" value="Conseguir más clientes" class="option-input">
-                        <label for="goal2" class="option-label">Conseguir más clientes</label>
-                        
-                        <input type="radio" name="goal" id="goal3" value="Vender mis productos o servicios" class="option-input">
-                        <label for="goal3" class="option-label">Vender mis productos o servicios</label>
-                        
-                        <input type="radio" name="goal" id="goal4" value="Destacarme de la competencia" class="option-input">
-                        <label for="goal4" class="option-label">Destacarme de la competencia</label>
-                    </div>
-                </div>
-
-                <div class="form-group" style="margin-top: 2rem;">
-                    <label class="form-label">🎨 ¿Ya tienes logo y colores de tu negocio?</label>
-                    <div class="option-grid">
-                        <input type="radio" name="identity" id="id-full" value="Sí, tengo todo (logo, colores, fotos)" class="option-input">
-                        <label for="id-full" class="option-label">✅ Sí, tengo todo</label>
-                        
-                        <input type="radio" name="identity" id="id-partial" value="Solo tengo el logo" class="option-input">
-                        <label for="id-partial" class="option-label">⚡ Solo tengo el logo</label>
-                        
-                        <input type="radio" name="identity" id="id-none" value="No tengo nada, ayúdame" class="option-input">
-                        <label for="id-none" class="option-label">❌ No tengo nada</label>
-                    </div>
-                </div>
-
-                <div class="form-buttons">
-                    <button class="btn-form btn-back" onclick="prevStep()">Atrás</button>
-                    <button class="btn-form btn-next" onclick="nextStep()" disabled id="step2Next">Continuar</button>
-                </div>
-            </div>
-
-            <!-- PASO 3 - NUEVO: Contenido y secciones -->
-            <div class="form-step" id="step3">
-                <div class="form-group">
-                    <label class="form-label">📝 ¿Qué partes quieres en tu página? (puedes elegir varias)</label>
-                    <div class="checkbox-grid">
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="sec-menu" value="Menú/Catálogo de productos" class="checkbox-input">
-                            <label for="sec-menu" class="checkbox-label">🍽️ Menú / Productos</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="sec-gallery" value="Galería de fotos" class="checkbox-input">
-                            <label for="sec-gallery" class="checkbox-label">📸 Fotos de mi negocio</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="sec-testimonials" value="Testimonios de clientes" class="checkbox-input">
-                            <label for="sec-testimonials" class="checkbox-label">⭐ Opiniones de clientes</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="sec-about" value="Sobre nosotros / Historia" class="checkbox-input">
-                            <label for="sec-about" class="checkbox-label">ℹ️ Nuestra historia</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="sec-contact" value="Formulario de contacto" class="checkbox-input">
-                            <label for="sec-contact" class="checkbox-label">📧 Formulario para contacto</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="sec-location" value="Ubicación / Mapa" class="checkbox-input">
-                            <label for="sec-location" class="checkbox-label">📍 Dónde estamos</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group" style="margin-top: 2rem;">
-                    <label class="form-label">🎨 ¿Qué colores te gustan para tu página?</label>
-                    <input type="text" class="form-input" id="colors" placeholder="Ej: Azul y blanco, Rojo, Los colores de mi logo, etc.">
-                    <small style="color: var(--color-text-light); font-size: 0.9rem; display: block; margin-top: 0.5rem;">Esto me ayuda a hacer un diseño más personalizado</small>
-                </div>
-
-                <div class="form-buttons">
-                    <button class="btn-form btn-back" onclick="prevStep()">Atrás</button>
-                    <button class="btn-form btn-next" onclick="nextStep()">Continuar</button>
-                </div>
-            </div>
-
-            <!-- PASO 4 - Información del negocio -->
-            <div class="form-step" id="step4">
-                <div class="form-group">
-                    <label class="form-label">🏢 ¿Cómo se llama tu negocio?</label>
-                    <input type="text" class="form-input" id="businessName" placeholder="Ej: Restaurante El Sabor, Peluquería Moderna" required>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label">📄 Cuéntame en 1 o 2 frases sobre tu negocio</label>
-                    <textarea class="form-input" id="businessDescription" placeholder="Ej: Restaurante de comida colombiana con 15 años de experiencia. Hacemos la mejor bandeja paisa de la ciudad." rows="3" required></textarea>
-                    <small style="color: var(--color-text-light); font-size: 0.9rem; display: block; margin-top: 0.5rem;">Esto lo voy a usar en tu página de muestra</small>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label">🌐 ¿Tienes alguna página que te guste como ejemplo? (opcional)</label>
-                    <input type="text" class="form-input" id="referenceUrl" placeholder="https://ejemplo.com (puedes dejarlo vacío)">
-                    <small style="color: var(--color-text-light); font-size: 0.9rem; display: block; margin-top: 0.5rem;">Me ayuda a entender qué estilo te gusta</small>
-                </div>
-
-                <div class="form-buttons">
-                    <button class="btn-form btn-back" onclick="prevStep()">Atrás</button>
-                    <button class="btn-form btn-next" onclick="nextStep()" disabled id="step4Next">Continuar</button>
-                </div>
-            </div>
-
-            <!-- PASO 5 - CONTACTO -->
-            <!-- PASO 5 - CONTACTO -->
-            <div class="form-step" id="step5">
-                <div class="form-group">
-                    <label class="form-label">📱 Tu número de WhatsApp</label>
-                    <input type="tel" class="form-input" id="whatsapp" placeholder="+57 300 123 4567" required>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label">👤 Tu nombre</label>
-                    <input type="text" class="form-input" id="name" placeholder="Tu nombre completo" required>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label">📧 Tu correo (opcional)</label>
-                    <input type="email" class="form-input" id="email" placeholder="tucorreo@email.com">
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label">📅 ¿Para cuándo necesitas tu página lista?</label>
-                    <div class="option-grid">
-                        <input type="radio" name="urgency" id="urgent" value="Lo más pronto posible" class="option-input">
-                        <label for="urgent" class="option-label">⚡ Lo más pronto posible</label>
-                        
-                        <input type="radio" name="urgency" id="normal" value="En 2-3 semanas está bien" class="option-input">
-                        <label for="normal" class="option-label">📅 En 2-3 semanas</label>
-                        
-                        <input type="radio" name="urgency" id="flexible" value="No tengo afán" class="option-input">
-                        <label for="flexible" class="option-label">🕐 No tengo afán</label>
-                    </div>
-                </div>
-
-                <div class="form-buttons">
-                    <button class="btn-form btn-back" onclick="prevStep()">Atrás</button>
-                    <button class="btn-form btn-next" onclick="submitForm()" disabled id="step5Next">Finalizar</button>
-                </div>
-            </div>
-
-            <!-- CONFIRMACIÓN -->
-            <div class="form-step" id="confirmation">
-                <div class="confirmation">
-                    <div class="confirmation-icon">✅</div>
-                    <h3>¡Perfecto <span id="confirmName"></span>!</h3>
-                    <div class="confirmation-message">
-                        <p><strong>Te contacto por WhatsApp en las próximas horas para:</strong></p>
-                        <p>✓ Mostrarte la MUESTRA GRATUITA de tu sitio<br>
-                        ✓ Explicarte el proceso del paquete <span id="confirmPackage"></span><br>
-                        ✓ Resolver dudas sobre dominio y publicación</p>
-                        <p style="margin-top: 1.5rem;"><strong>Mientras tanto, ¿tienes fotos de tu negocio?</strong><br>
-                        Puedes enviarlas al WhatsApp para adelantar trabajo 📸</p>
-                    </div>
-                    <button class="btn btn-primary" id="whatsappButton" onclick="sendToWhatsApp()">
-                        <span>💬 Enviar solicitud por WhatsApp</span>
-                    </button>
-                </div>
-            </div>
-        </div>
     </section>
 
     <!-- CREDIBILIDAD -->
@@ -1775,23 +1157,8 @@
         </div>
     </section>
 
-    <!-- EASTER EGG -->
-    <section class="easter-egg" id="easterEgg">
-        <h3>👀 ¿Llegaste hasta aquí?</h3>
-        <p>Claramente te interesa el diseño web de verdad.</p>
-        <div class="bonus-box">
-            <h4 style="margin-bottom: 1rem;">🎁 BONUS EXCLUSIVO</h4>
-            <p>Si mencionas <strong>"Encontré el mensaje oculto"</strong> cuando me contactes, te regalo:</p>
-            <p>✓ Análisis gratuito de tu competencia online<br>
-            ✓ 3 sugerencias de componentes únicos para tu sector</p>
-            <button class="btn btn-primary" style="margin-top: 1rem;" onclick="scrollToSection('formulario')">
-                <span>Contactar ahora con el código</span>
-            </button>
-        </div>
-    </section>
-
     <!-- WHATSAPP FLOTANTE -->
-    <a href="https://wa.me/573154674742" class="whatsapp-float" target="_blank" title="Chatea por WhatsApp">
+    <a href="https://wa.me/573154674742?text=Hola!%20Me%20interesa%20una%20p%C3%A1gina%20web%20para%20mi%20negocio" class="whatsapp-float" target="_blank" title="Chatea por WhatsApp">
         <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
             <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-5.245 1.408 1.408-5.245-0.292-0.507c-1.224-2.162-1.87-4.588-1.87-7.070 0-7.515 6.118-13.633 13.633-13.633s13.633 6.118 13.633 13.633-6.118 13.633-13.633 13.633zM21.933 18.667c-0.382-0.191-2.267-1.119-2.619-1.247s-0.607-0.191-0.863 0.191c-0.256 0.382-0.991 1.247-1.215 1.503s-0.447 0.287-0.829 0.096c-0.382-0.191-1.613-0.595-3.071-1.894-1.135-1.012-1.901-2.262-2.124-2.644s-0.024-0.589 0.168-0.779c0.172-0.171 0.382-0.446 0.573-0.669s0.256-0.382 0.382-0.638c0.127-0.256 0.064-0.478-0.032-0.669s-0.863-2.076-1.183-2.843c-0.311-0.747-0.627-0.646-0.863-0.658-0.223-0.012-0.478-0.015-0.733-0.015s-0.669 0.096-1.021 0.478c-0.351 0.382-1.343 1.311-1.343 3.197s1.375 3.707 1.567 3.963c0.191 0.256 2.704 4.13 6.553 5.791 0.915 0.395 1.629 0.631 2.186 0.808 0.919 0.292 1.755 0.251 2.414 0.152 0.737-0.11 2.267-0.927 2.587-1.822s0.32-1.663 0.224-1.822c-0.096-0.159-0.351-0.256-0.733-0.446z"/>
         </svg>
@@ -1966,6 +1333,19 @@
             }, 500);
         }
 
+        // === CONTACTO WHATSAPP POR PAQUETE ===
+        function contactWhatsApp(packageType) {
+            const packageNames = {
+                'basico': 'Básico ($160.000)',
+                'profesional': 'Profesional ($260.000)',
+                'premium': 'Premium ($360.000)'
+            };
+            
+            const message = `Hola! Me interesa el plan ${packageNames[packageType]} para mi negocio. ¿Podrías darme más información?`;
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/573154674742?text=${encodedMessage}`, '_blank');
+        }
+
         // === MODAL ===
         function openProjectModal(project) {
             const modal = document.getElementById('projectModal');
@@ -2006,7 +1386,7 @@
                             <span>🌐 Abrir sitio completo</span>
                         </a>
                     ` : ''}
-                    <button class="btn btn-primary" style="flex: 1; min-width: 200px; justify-content: center;" onclick="selectPackage('${project.type}')">
+                    <button class="btn btn-primary" style="flex: 1; min-width: 200px; justify-content: center;" onclick="contactWhatsApp('${project.type}')">
                         <span>Quiero algo así para mi negocio</span>
                     </button>
                 </div>
@@ -2058,258 +1438,15 @@
             });
         }
 
-        // === FORMULARIO INTELIGENTE ===
-        let currentStep = 1;
-        const formData = {};
-
-        function selectPackage(packageType) {
-            closeModal();
-            scrollToSection('formulario');
-            setTimeout(() => {
-                const packageMap = {
-                    'basico': 'pkg-basico',
-                    'profesional': 'pkg-profesional',
-                    'premium': 'pkg-premium'
-                };
-                const packageInput = document.getElementById(packageMap[packageType]);
-                if (packageInput) {
-                    packageInput.checked = true;
-                    validateStep1();
-                }
-            }, 500);
-        }
-
-        // Validación paso 1
-        document.querySelectorAll('input[name="business-type"]').forEach(input => {
-            input.addEventListener('change', function() {
-                const otherInput = document.getElementById('otherBusiness');
-                if (this.value === 'Otro') {
-                    otherInput.classList.remove('hidden');
-                } else {
-                    otherInput.classList.add('hidden');
-                }
-                validateStep1();
-            });
-        });
-
-        document.querySelectorAll('input[name="package"]').forEach(input => {
-            input.addEventListener('change', validateStep1);
-        });
-
-        function validateStep1() {
-            const businessType = document.querySelector('input[name="business-type"]:checked');
-            const packageType = document.querySelector('input[name="package"]:checked');
-            const nextBtn = document.getElementById('step1Next');
-            
-            if (businessType && packageType) {
-                nextBtn.disabled = false;
-                if (businessType.value === 'Otro') {
-                    const otherInput = document.getElementById('otherBusiness');
-                    nextBtn.disabled = !otherInput.value.trim();
-                }
-            } else {
-                nextBtn.disabled = true;
-            }
-        }
-
-        // Validación paso 2
-        document.querySelectorAll('input[name="goal"]').forEach(input => {
-            input.addEventListener('change', validateStep2);
-        });
-
-        document.querySelectorAll('input[name="identity"]').forEach(input => {
-            input.addEventListener('change', validateStep2);
-        });
-
-        function validateStep2() {
-            const goal = document.querySelector('input[name="goal"]:checked');
-            const identity = document.querySelector('input[name="identity"]:checked');
-            const nextBtn = document.getElementById('step2Next');
-            nextBtn.disabled = !(goal && identity);
-        }
-
-        // Validación paso 4 (información del negocio)
-        ['businessName', 'businessDescription'].forEach(id => {
-            document.getElementById(id).addEventListener('input', validateStep4);
-        });
-
-        function validateStep4() {
-            const businessName = document.getElementById('businessName').value.trim();
-            const businessDescription = document.getElementById('businessDescription').value.trim();
-            const nextBtn = document.getElementById('step4Next');
-            nextBtn.disabled = !(businessName && businessDescription);
-        }
-
-        // Validación paso 5 (contacto - era paso 3)
-        ['whatsapp', 'name'].forEach(id => {
-            document.getElementById(id).addEventListener('input', validateStep5);
-        });
-
-        document.querySelectorAll('input[name="urgency"]').forEach(input => {
-            input.addEventListener('change', validateStep5);
-        });
-
-        function validateStep5() {
-            const whatsapp = document.getElementById('whatsapp').value.trim();
-            const name = document.getElementById('name').value.trim();
-            const urgency = document.querySelector('input[name="urgency"]:checked');
-            const nextBtn = document.getElementById('step5Next');
-            nextBtn.disabled = !(whatsapp && name && urgency);
-        }
-
-        function nextStep() {
-            // Guardar datos del paso actual
-            if (currentStep === 1) {
-                formData.businessType = document.querySelector('input[name="business-type"]:checked').value;
-                if (formData.businessType === 'Otro') {
-                    formData.businessType = document.getElementById('otherBusiness').value;
-                }
-                formData.package = document.querySelector('input[name="package"]:checked').value;
-            } else if (currentStep === 2) {
-                formData.goal = document.querySelector('input[name="goal"]:checked').value;
-                formData.identity = document.querySelector('input[name="identity"]:checked').value;
-            } else if (currentStep === 3) {
-                // Capturar secciones seleccionadas (checkboxes)
-                const selectedSections = [];
-                document.querySelectorAll('.checkbox-input:checked').forEach(checkbox => {
-                    selectedSections.push(checkbox.value);
-                });
-                formData.sections = selectedSections.length > 0 ? selectedSections.join(', ') : 'No especificadas';
-                formData.colors = document.getElementById('colors').value.trim() || 'No especificado';
-            } else if (currentStep === 4) {
-                formData.businessName = document.getElementById('businessName').value.trim();
-                formData.businessDescription = document.getElementById('businessDescription').value.trim();
-                formData.referenceUrl = document.getElementById('referenceUrl').value.trim() || 'Ninguna';
-            }
-
-            // Ocultar paso actual
-            document.getElementById(`step${currentStep}`).classList.remove('active');
-            document.querySelector(`.progress-step:nth-child(${currentStep + 1})`).classList.remove('active');
-            document.querySelector(`.progress-step:nth-child(${currentStep + 1})`).classList.add('completed');
-
-            // Mostrar siguiente paso
-            currentStep++;
-            document.getElementById(`step${currentStep}`).classList.add('active');
-            document.querySelector(`.progress-step:nth-child(${currentStep + 1})`).classList.add('active');
-
-            // Actualizar barra de progreso (ahora son 5 pasos, no 4)
-            const progressLine = document.getElementById('progressLine');
-            progressLine.style.width = `${((currentStep - 1) / 4) * 100}%`;
-
-            // Scroll al formulario
-            document.querySelector('.form-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-
-        function prevStep() {
-            document.getElementById(`step${currentStep}`).classList.remove('active');
-            document.querySelector(`.progress-step:nth-child(${currentStep + 1})`).classList.remove('active');
-
-            currentStep--;
-            document.getElementById(`step${currentStep}`).classList.add('active');
-            document.querySelector(`.progress-step:nth-child(${currentStep + 1})`).classList.add('active');
-            document.querySelector(`.progress-step:nth-child(${currentStep + 2})`).classList.remove('completed');
-
-            const progressLine = document.getElementById('progressLine');
-            progressLine.style.width = `${((currentStep - 1) / 3) * 100}%`;
-        }
-
-        function submitForm() {
-            formData.whatsapp = document.getElementById('whatsapp').value;
-            formData.name = document.getElementById('name').value;
-            formData.email = document.getElementById('email').value;
-            formData.urgency = document.querySelector('input[name="urgency"]:checked').value;
-
-            // LocalStorage para persistencia
-            localStorage.setItem('webloomFormData', JSON.stringify(formData));
-            
-            // Redirigir directamente a WhatsApp con toda la información
-            sendToWhatsApp();
-        }
-
-        // === ENVIAR A WHATSAPP ===
-        function sendToWhatsApp() {
-            // Construir mensaje completo con toda la información
-            const message = `🌐 *NUEVA SOLICITUD DE SITIO WEB - WEBLOOM*
-
-═══════════════════════════
-📋 *DATOS DEL CLIENTE*
-═══════════════════════════
-👤 Nombre: ${formData.name}
-📱 WhatsApp: ${formData.whatsapp}
-${formData.email ? `📧 Email: ${formData.email}` : ''}
-
-═══════════════════════════
-🏢 *INFORMACIÓN DEL NEGOCIO*
-═══════════════════════════
-📌 Nombre del negocio: ${formData.businessName}
-📝 Descripción: ${formData.businessDescription}
-🏷️ Tipo: ${formData.businessType}
-${formData.referenceUrl !== 'Ninguna' ? `🌐 Referencia/Sitio actual: ${formData.referenceUrl}` : ''}
-
-═══════════════════════════
-💰 *PAQUETE Y OBJETIVO*
-═══════════════════════════
-📦 Paquete seleccionado: ${formData.package}
-🎯 Objetivo principal: ${formData.goal}
-
-═══════════════════════════
-🎨 *DISEÑO Y CONTENIDO*
-═══════════════════════════
-🖼️ Identidad visual: ${formData.identity}
-🎨 Preferencia de colores: ${formData.colors}
-
-📑 Secciones importantes:
-${formData.sections}
-
-═══════════════════════════
-📅 *TIEMPO Y URGENCIA*
-═══════════════════════════
-⏰ Necesita el sitio: ${formData.urgency}
-
-═══════════════════════════
-✅ *SIGUIENTE PASO*
-═══════════════════════════
-🎁 Crear MUESTRA GRATUITA personalizada
-📞 Agendar llamada para explicar proceso
-💡 Revisar ejemplos del paquete seleccionado
-
----
-🚀 Formulario completado desde webloom.com`;
-
-            // Codificar el mensaje para URL
-            const encodedMessage = encodeURIComponent(message);
-            
-            // Abrir WhatsApp con el mensaje
-            window.open(`https://wa.me/573154674742?text=${encodedMessage}`, '_blank');
-        }
-
         // === SCROLL SUAVE ===
         function scrollToSection(sectionId) {
             const section = document.getElementById(sectionId);
             section.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
-        // === EASTER EGG ===
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.2 });
-
-        observer.observe(document.getElementById('easterEgg'));
-
         // === INICIALIZACIÓN ===
         document.addEventListener('DOMContentLoaded', () => {
             renderProjects();
-
-            // Cargar datos guardados si existen
-            const savedData = localStorage.getItem('webloomFormData');
-            if (savedData) {
-                const data = JSON.parse(savedData);
-                // Podrías pre-llenar el formulario aquí si lo deseas
-            }
         });
 
         // Cerrar modal al hacer clic fuera
@@ -2318,9 +1455,6 @@ ${formData.sections}
                 closeModal();
             }
         });
-
-        // Validación del input "Otro"
-        document.getElementById('otherBusiness').addEventListener('input', validateStep1);
     </script>
 </body>
 </html>
